@@ -1,0 +1,720 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3342C2481A9F2D5AD67F6286 /* Pods_AquaManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCB7D24A1C4CEB77D8891B0B /* Pods_AquaManager.framework */; };
+		5212D41F1E562676006F5BB4 /* AQBaseNotificationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5212D41E1E562676006F5BB4 /* AQBaseNotificationRequest.swift */; };
+		5212D4211E564291006F5BB4 /* AQNotificationInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5212D4201E564291006F5BB4 /* AQNotificationInfoViewController.swift */; };
+		522F09E01E421296005C2188 /* AQIntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522F09DF1E421296005C2188 /* AQIntroViewController.swift */; };
+		522F09E21E4218A0005C2188 /* AQNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522F09E11E4218A0005C2188 /* AQNavigationViewController.swift */; };
+		522F09E81E4230C8005C2188 /* StringExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522F09E71E4230C8005C2188 /* StringExtention.swift */; };
+		522F09EB1E4233DD005C2188 /* AQUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522F09EA1E4233DD005C2188 /* AQUtils.swift */; };
+		522F09ED1E4233EC005C2188 /* AQConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522F09EC1E4233EC005C2188 /* AQConstants.swift */; };
+		5282B18C1E409512002F99D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5282B18B1E409512002F99D6 /* AppDelegate.swift */; };
+		5282B1911E409512002F99D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5282B18F1E409512002F99D6 /* Main.storyboard */; };
+		5282B1931E409512002F99D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5282B1921E409512002F99D6 /* Assets.xcassets */; };
+		5282B1961E409512002F99D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5282B1941E409512002F99D6 /* LaunchScreen.storyboard */; };
+		5282B19F1E40D28E002F99D6 /* AQApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5282B19E1E40D28E002F99D6 /* AQApiClient.swift */; };
+		5282B1A11E40D2B4002F99D6 /* AlamofireManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5282B1A01E40D2B4002F99D6 /* AlamofireManager.swift */; };
+		5282B1A41E40FC57002F99D6 /* AQAuthRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5282B1A31E40FC57002F99D6 /* AQAuthRequest.swift */; };
+		5282B1A61E410371002F99D6 /* AQAuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5282B1A51E410371002F99D6 /* AQAuthResponse.swift */; };
+		5282B1A81E410465002F99D6 /* AQSensData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5282B1A71E410465002F99D6 /* AQSensData.swift */; };
+		5282B1AB1E4120A2002F99D6 /* AQSensResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5282B1AA1E4120A2002F99D6 /* AQSensResponse.swift */; };
+		5282B1AF1E412241002F99D6 /* AQSimpleResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5282B1AE1E412241002F99D6 /* AQSimpleResponse.swift */; };
+		5282B1B11E4122A8002F99D6 /* AQRemoveNotifRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5282B1B01E4122A8002F99D6 /* AQRemoveNotifRequest.swift */; };
+		5282B1B41E414097002F99D6 /* AQMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5282B1B31E414097002F99D6 /* AQMainViewController.swift */; };
+		5282B1B61E4140AD002F99D6 /* AQBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5282B1B51E4140AD002F99D6 /* AQBaseViewController.swift */; };
+		5282B1B81E41413A002F99D6 /* AQNotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5282B1B71E41413A002F99D6 /* AQNotificationsViewController.swift */; };
+		5282B1BA1E414160002F99D6 /* AQDevicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5282B1B91E414160002F99D6 /* AQDevicesViewController.swift */; };
+		5282B1BC1E414185002F99D6 /* AQGeofencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5282B1BB1E414185002F99D6 /* AQGeofencesViewController.swift */; };
+		5282B1BE1E4141A5002F99D6 /* AQSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5282B1BD1E4141A5002F99D6 /* AQSettingsViewController.swift */; };
+		5282B1C01E4141E6002F99D6 /* AQMainMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5282B1BF1E4141E6002F99D6 /* AQMainMapViewController.swift */; };
+		5282B1C41E4142CF002F99D6 /* AQAddNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5282B1C31E4142CF002F99D6 /* AQAddNotificationViewController.swift */; };
+		5282B1C61E414785002F99D6 /* AQSelectOptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5282B1C51E414785002F99D6 /* AQSelectOptionViewController.swift */; };
+		5282B1C81E4147E0002F99D6 /* AQAddGeofenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5282B1C71E4147E0002F99D6 /* AQAddGeofenceViewController.swift */; };
+		5293249F1E54CAED00036949 /* AQNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5293249E1E54CAED00036949 /* AQNotification.swift */; };
+		529324A11E54CAFC00036949 /* AQNotification+Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529324A01E54CAFC00036949 /* AQNotification+Operations.swift */; };
+		529324A31E54DB2D00036949 /* AQFillNotificationInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529324A21E54DB2D00036949 /* AQFillNotificationInfoController.swift */; };
+		529324A51E54F8CB00036949 /* AQNotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529324A41E54F8CB00036949 /* AQNotificationsManager.swift */; };
+		52A91E3F1E4CFCA4001D7D9B /* AQGeofenceCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A91E3E1E4CFCA4001D7D9B /* AQGeofenceCreationViewController.swift */; };
+		52A91E411E4CFFC4001D7D9B /* AQGeofence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A91E401E4CFFC4001D7D9B /* AQGeofence.swift */; };
+		52A91E431E4CFFDC001D7D9B /* AQGeofence+Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A91E421E4CFFDC001D7D9B /* AQGeofence+Operations.swift */; };
+		52A91E451E4D0809001D7D9B /* AQGeofenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A91E441E4D0809001D7D9B /* AQGeofenceManager.swift */; };
+		52D015E51E44F076001F4A75 /* AQDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D015E41E44F076001F4A75 /* AQDevice.swift */; };
+		52D015E71E44F62A001F4A75 /* AQAddDeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D015E61E44F62A001F4A75 /* AQAddDeviceViewController.swift */; };
+		52D015E91E44FB8D001F4A75 /* AQDevicesBusinessLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D015E81E44FB8D001F4A75 /* AQDevicesBusinessLayer.swift */; };
+		52D015EB1E44FF34001F4A75 /* AQDeviceApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D015EA1E44FF34001F4A75 /* AQDeviceApiClient.swift */; };
+		52D015EE1E451AD8001F4A75 /* AQControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D015ED1E451AD8001F4A75 /* AQControllerFactory.swift */; };
+		52D015F11E4527ED001F4A75 /* AQRawDataListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D015F01E4527ED001F4A75 /* AQRawDataListController.swift */; };
+		52D015F31E45281D001F4A75 /* AQTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D015F21E45281D001F4A75 /* AQTextViewController.swift */; };
+		52D015F51E4536AF001F4A75 /* AQDeviceInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D015F41E4536AF001F4A75 /* AQDeviceInfoViewController.swift */; };
+		52DBE5231E4F3E2800B3CCE2 /* AQManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DBE5221E4F3E2800B3CCE2 /* AQManager.swift */; };
+		52DBE5251E4F400600B3CCE2 /* UIAlertController+PopOVer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DBE5241E4F400600B3CCE2 /* UIAlertController+PopOVer.swift */; };
+		52DBE5281E4F44FA00B3CCE2 /* AQRemoveNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DBE5271E4F44FA00B3CCE2 /* AQRemoveNotificationViewController.swift */; };
+		52DBE52A1E4F478600B3CCE2 /* AQNotificationsBusinessLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DBE5291E4F478600B3CCE2 /* AQNotificationsBusinessLayer.swift */; };
+		52DBE52C1E4F479600B3CCE2 /* AQNotificationApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DBE52B1E4F479600B3CCE2 /* AQNotificationApiClient.swift */; };
+		52F4F1E91E45E1B0008E3EEC /* AquaManagerModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 52F4F1E71E45E1B0008E3EEC /* AquaManagerModel.xcdatamodeld */; };
+		52F4F1EB1E45E304008E3EEC /* AQCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F4F1EA1E45E304008E3EEC /* AQCoreDataManager.swift */; };
+		52F4F1ED1E45E42E008E3EEC /* AQDeviceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F4F1EC1E45E42E008E3EEC /* AQDeviceManager.swift */; };
+		52F4F1F01E45E561008E3EEC /* AQDevice+Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F4F1EF1E45E561008E3EEC /* AQDevice+Operations.swift */; };
+		52F4F1F21E460468008E3EEC /* AQNotificationsName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F4F1F11E460468008E3EEC /* AQNotificationsName.swift */; };
+		52F4F1F51E460D6A008E3EEC /* AQFilterListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F4F1F41E460D6A008E3EEC /* AQFilterListViewController.swift */; };
+		52FCE16D1E4E78AA0090F683 /* AQSettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FCE16C1E4E78AA0090F683 /* AQSettingsManager.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		24846B63910E5C45BBB3E0DC /* Pods-AquaManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AquaManager.release.xcconfig"; path = "Pods/Target Support Files/Pods-AquaManager/Pods-AquaManager.release.xcconfig"; sourceTree = "<group>"; };
+		5212D41E1E562676006F5BB4 /* AQBaseNotificationRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AQBaseNotificationRequest.swift; sourceTree = "<group>"; };
+		5212D4201E564291006F5BB4 /* AQNotificationInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AQNotificationInfoViewController.swift; sourceTree = "<group>"; };
+		522F09DF1E421296005C2188 /* AQIntroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AQIntroViewController.swift; sourceTree = "<group>"; };
+		522F09E11E4218A0005C2188 /* AQNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AQNavigationViewController.swift; sourceTree = "<group>"; };
+		522F09E71E4230C8005C2188 /* StringExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtention.swift; sourceTree = "<group>"; };
+		522F09EA1E4233DD005C2188 /* AQUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AQUtils.swift; sourceTree = "<group>"; };
+		522F09EC1E4233EC005C2188 /* AQConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AQConstants.swift; sourceTree = "<group>"; };
+		5282B1881E409512002F99D6 /* AquaManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AquaManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5282B18B1E409512002F99D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5282B1901E409512002F99D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5282B1921E409512002F99D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5282B1951E409512002F99D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5282B1971E409512002F99D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5282B19E1E40D28E002F99D6 /* AQApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AQApiClient.swift; path = API/AQApiClient.swift; sourceTree = "<group>"; };
+		5282B1A01E40D2B4002F99D6 /* AlamofireManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlamofireManager.swift; path = API/AlamofireManager.swift; sourceTree = "<group>"; };
+		5282B1A31E40FC57002F99D6 /* AQAuthRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AQAuthRequest.swift; path = API/Model/AQAuthRequest.swift; sourceTree = "<group>"; };
+		5282B1A51E410371002F99D6 /* AQAuthResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AQAuthResponse.swift; path = API/Model/AQAuthResponse.swift; sourceTree = "<group>"; };
+		5282B1A71E410465002F99D6 /* AQSensData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AQSensData.swift; path = API/Model/AQSensData.swift; sourceTree = "<group>"; };
+		5282B1AA1E4120A2002F99D6 /* AQSensResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AQSensResponse.swift; path = API/Model/AQSensResponse.swift; sourceTree = "<group>"; };
+		5282B1AE1E412241002F99D6 /* AQSimpleResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AQSimpleResponse.swift; path = API/Model/AQSimpleResponse.swift; sourceTree = "<group>"; };
+		5282B1B01E4122A8002F99D6 /* AQRemoveNotifRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AQRemoveNotifRequest.swift; path = API/Model/AQRemoveNotifRequest.swift; sourceTree = "<group>"; };
+		5282B1B31E414097002F99D6 /* AQMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AQMainViewController.swift; sourceTree = "<group>"; };
+		5282B1B51E4140AD002F99D6 /* AQBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AQBaseViewController.swift; sourceTree = "<group>"; };
+		5282B1B71E41413A002F99D6 /* AQNotificationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AQNotificationsViewController.swift; sourceTree = "<group>"; };
+		5282B1B91E414160002F99D6 /* AQDevicesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AQDevicesViewController.swift; sourceTree = "<group>"; };
+		5282B1BB1E414185002F99D6 /* AQGeofencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AQGeofencesViewController.swift; sourceTree = "<group>"; };
+		5282B1BD1E4141A5002F99D6 /* AQSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AQSettingsViewController.swift; sourceTree = "<group>"; };
+		5282B1BF1E4141E6002F99D6 /* AQMainMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AQMainMapViewController.swift; sourceTree = "<group>"; };
+		5282B1C31E4142CF002F99D6 /* AQAddNotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AQAddNotificationViewController.swift; sourceTree = "<group>"; };
+		5282B1C51E414785002F99D6 /* AQSelectOptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AQSelectOptionViewController.swift; sourceTree = "<group>"; };
+		5282B1C71E4147E0002F99D6 /* AQAddGeofenceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AQAddGeofenceViewController.swift; sourceTree = "<group>"; };
+		5293249E1E54CAED00036949 /* AQNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AQNotification.swift; sourceTree = "<group>"; };
+		529324A01E54CAFC00036949 /* AQNotification+Operations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AQNotification+Operations.swift"; sourceTree = "<group>"; };
+		529324A21E54DB2D00036949 /* AQFillNotificationInfoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AQFillNotificationInfoController.swift; sourceTree = "<group>"; };
+		529324A41E54F8CB00036949 /* AQNotificationsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AQNotificationsManager.swift; sourceTree = "<group>"; };
+		52A91E3E1E4CFCA4001D7D9B /* AQGeofenceCreationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AQGeofenceCreationViewController.swift; sourceTree = "<group>"; };
+		52A91E401E4CFFC4001D7D9B /* AQGeofence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AQGeofence.swift; sourceTree = "<group>"; };
+		52A91E421E4CFFDC001D7D9B /* AQGeofence+Operations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AQGeofence+Operations.swift"; sourceTree = "<group>"; };
+		52A91E441E4D0809001D7D9B /* AQGeofenceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AQGeofenceManager.swift; sourceTree = "<group>"; };
+		52D015E41E44F076001F4A75 /* AQDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AQDevice.swift; sourceTree = "<group>"; };
+		52D015E61E44F62A001F4A75 /* AQAddDeviceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AQAddDeviceViewController.swift; sourceTree = "<group>"; };
+		52D015E81E44FB8D001F4A75 /* AQDevicesBusinessLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AQDevicesBusinessLayer.swift; sourceTree = "<group>"; };
+		52D015EA1E44FF34001F4A75 /* AQDeviceApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AQDeviceApiClient.swift; sourceTree = "<group>"; };
+		52D015ED1E451AD8001F4A75 /* AQControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AQControllerFactory.swift; sourceTree = "<group>"; };
+		52D015F01E4527ED001F4A75 /* AQRawDataListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AQRawDataListController.swift; sourceTree = "<group>"; };
+		52D015F21E45281D001F4A75 /* AQTextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AQTextViewController.swift; sourceTree = "<group>"; };
+		52D015F41E4536AF001F4A75 /* AQDeviceInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AQDeviceInfoViewController.swift; sourceTree = "<group>"; };
+		52DBE5221E4F3E2800B3CCE2 /* AQManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AQManager.swift; sourceTree = "<group>"; };
+		52DBE5241E4F400600B3CCE2 /* UIAlertController+PopOVer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+PopOVer.swift"; sourceTree = "<group>"; };
+		52DBE5271E4F44FA00B3CCE2 /* AQRemoveNotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AQRemoveNotificationViewController.swift; sourceTree = "<group>"; };
+		52DBE5291E4F478600B3CCE2 /* AQNotificationsBusinessLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AQNotificationsBusinessLayer.swift; sourceTree = "<group>"; };
+		52DBE52B1E4F479600B3CCE2 /* AQNotificationApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AQNotificationApiClient.swift; sourceTree = "<group>"; };
+		52F4F1E81E45E1B0008E3EEC /* AquaManagerModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AquaManagerModel.xcdatamodel; sourceTree = "<group>"; };
+		52F4F1EA1E45E304008E3EEC /* AQCoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AQCoreDataManager.swift; sourceTree = "<group>"; };
+		52F4F1EC1E45E42E008E3EEC /* AQDeviceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AQDeviceManager.swift; sourceTree = "<group>"; };
+		52F4F1EF1E45E561008E3EEC /* AQDevice+Operations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AQDevice+Operations.swift"; sourceTree = "<group>"; };
+		52F4F1F11E460468008E3EEC /* AQNotificationsName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AQNotificationsName.swift; sourceTree = "<group>"; };
+		52F4F1F41E460D6A008E3EEC /* AQFilterListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AQFilterListViewController.swift; sourceTree = "<group>"; };
+		52FCE16C1E4E78AA0090F683 /* AQSettingsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AQSettingsManager.swift; sourceTree = "<group>"; };
+		A7F287390FAA58CCF33F4CAD /* Pods-AquaManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AquaManager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AquaManager/Pods-AquaManager.debug.xcconfig"; sourceTree = "<group>"; };
+		FCB7D24A1C4CEB77D8891B0B /* Pods_AquaManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AquaManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5282B1851E409512002F99D6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3342C2481A9F2D5AD67F6286 /* Pods_AquaManager.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5212D41D1E56264E006F5BB4 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				5212D41E1E562676006F5BB4 /* AQBaseNotificationRequest.swift */,
+			);
+			name = Notifications;
+			sourceTree = "<group>";
+		};
+		522F09E31E421D78005C2188 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				522F09E71E4230C8005C2188 /* StringExtention.swift */,
+				52D015ED1E451AD8001F4A75 /* AQControllerFactory.swift */,
+				52F4F1EA1E45E304008E3EEC /* AQCoreDataManager.swift */,
+				52F4F1EC1E45E42E008E3EEC /* AQDeviceManager.swift */,
+				52A91E441E4D0809001D7D9B /* AQGeofenceManager.swift */,
+				52FCE16C1E4E78AA0090F683 /* AQSettingsManager.swift */,
+				52DBE5221E4F3E2800B3CCE2 /* AQManager.swift */,
+				52DBE5241E4F400600B3CCE2 /* UIAlertController+PopOVer.swift */,
+				529324A41E54F8CB00036949 /* AQNotificationsManager.swift */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
+		522F09E91E4233D0005C2188 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				522F09EA1E4233DD005C2188 /* AQUtils.swift */,
+				522F09EC1E4233EC005C2188 /* AQConstants.swift */,
+				52F4F1F11E460468008E3EEC /* AQNotificationsName.swift */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		5282B17F1E409512002F99D6 = {
+			isa = PBXGroup;
+			children = (
+				5282B18A1E409512002F99D6 /* AquaManager */,
+				5282B1891E409512002F99D6 /* Products */,
+				6B99DBCDD15C50A6D2480A86 /* Pods */,
+				928CD0CDB943A270C5F58499 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		5282B1891E409512002F99D6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5282B1881E409512002F99D6 /* AquaManager.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5282B18A1E409512002F99D6 /* AquaManager */ = {
+			isa = PBXGroup;
+			children = (
+				522F09E91E4233D0005C2188 /* Utils */,
+				522F09E31E421D78005C2188 /* Managers */,
+				5282B1B21E414084002F99D6 /* ViewControllers */,
+				5282B19D1E40D233002F99D6 /* API */,
+				5282B18B1E409512002F99D6 /* AppDelegate.swift */,
+				5282B18F1E409512002F99D6 /* Main.storyboard */,
+				5282B1921E409512002F99D6 /* Assets.xcassets */,
+				5282B1941E409512002F99D6 /* LaunchScreen.storyboard */,
+				5282B1971E409512002F99D6 /* Info.plist */,
+				52F4F1E71E45E1B0008E3EEC /* AquaManagerModel.xcdatamodeld */,
+			);
+			path = AquaManager;
+			sourceTree = "<group>";
+		};
+		5282B19D1E40D233002F99D6 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				52D015EC1E44FF3C001F4A75 /* Layer */,
+				5282B1A21E40FB53002F99D6 /* Model */,
+				5282B19E1E40D28E002F99D6 /* AQApiClient.swift */,
+				5282B1A01E40D2B4002F99D6 /* AlamofireManager.swift */,
+				52D015EA1E44FF34001F4A75 /* AQDeviceApiClient.swift */,
+				52DBE52B1E4F479600B3CCE2 /* AQNotificationApiClient.swift */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
+		5282B1A21E40FB53002F99D6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5282B1AD1E4121A8002F99D6 /* Request */,
+				5282B1AC1E41219E002F99D6 /* Responses */,
+				52D015E41E44F076001F4A75 /* AQDevice.swift */,
+				52F4F1EF1E45E561008E3EEC /* AQDevice+Operations.swift */,
+				52A91E401E4CFFC4001D7D9B /* AQGeofence.swift */,
+				52A91E421E4CFFDC001D7D9B /* AQGeofence+Operations.swift */,
+				5293249E1E54CAED00036949 /* AQNotification.swift */,
+				529324A01E54CAFC00036949 /* AQNotification+Operations.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		5282B1AC1E41219E002F99D6 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				5282B1A51E410371002F99D6 /* AQAuthResponse.swift */,
+				5282B1AA1E4120A2002F99D6 /* AQSensResponse.swift */,
+				5282B1A71E410465002F99D6 /* AQSensData.swift */,
+				5282B1AE1E412241002F99D6 /* AQSimpleResponse.swift */,
+			);
+			name = Responses;
+			sourceTree = "<group>";
+		};
+		5282B1AD1E4121A8002F99D6 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				5212D41D1E56264E006F5BB4 /* Notifications */,
+				5282B1A31E40FC57002F99D6 /* AQAuthRequest.swift */,
+				5282B1B01E4122A8002F99D6 /* AQRemoveNotifRequest.swift */,
+			);
+			name = Request;
+			sourceTree = "<group>";
+		};
+		5282B1B21E414084002F99D6 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				52DBE5261E4F44E300B3CCE2 /* Settings */,
+				52F4F1F31E460CCC008E3EEC /* Map */,
+				52D015EF1E4527CF001F4A75 /* Devices */,
+				5282B1C21E41429F002F99D6 /* Geofencing */,
+				5282B1C11E414297002F99D6 /* Notifications */,
+				5282B1B31E414097002F99D6 /* AQMainViewController.swift */,
+				5282B1B51E4140AD002F99D6 /* AQBaseViewController.swift */,
+				522F09DF1E421296005C2188 /* AQIntroViewController.swift */,
+				522F09E11E4218A0005C2188 /* AQNavigationViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		5282B1C11E414297002F99D6 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				5282B1B71E41413A002F99D6 /* AQNotificationsViewController.swift */,
+				5282B1C31E4142CF002F99D6 /* AQAddNotificationViewController.swift */,
+				5282B1C51E414785002F99D6 /* AQSelectOptionViewController.swift */,
+				529324A21E54DB2D00036949 /* AQFillNotificationInfoController.swift */,
+				5212D4201E564291006F5BB4 /* AQNotificationInfoViewController.swift */,
+			);
+			name = Notifications;
+			sourceTree = "<group>";
+		};
+		5282B1C21E41429F002F99D6 /* Geofencing */ = {
+			isa = PBXGroup;
+			children = (
+				5282B1C71E4147E0002F99D6 /* AQAddGeofenceViewController.swift */,
+				5282B1BB1E414185002F99D6 /* AQGeofencesViewController.swift */,
+				52A91E3E1E4CFCA4001D7D9B /* AQGeofenceCreationViewController.swift */,
+			);
+			name = Geofencing;
+			sourceTree = "<group>";
+		};
+		52D015EC1E44FF3C001F4A75 /* Layer */ = {
+			isa = PBXGroup;
+			children = (
+				52D015E81E44FB8D001F4A75 /* AQDevicesBusinessLayer.swift */,
+				52DBE5291E4F478600B3CCE2 /* AQNotificationsBusinessLayer.swift */,
+			);
+			name = Layer;
+			sourceTree = "<group>";
+		};
+		52D015EF1E4527CF001F4A75 /* Devices */ = {
+			isa = PBXGroup;
+			children = (
+				52D015E61E44F62A001F4A75 /* AQAddDeviceViewController.swift */,
+				5282B1B91E414160002F99D6 /* AQDevicesViewController.swift */,
+				52D015F01E4527ED001F4A75 /* AQRawDataListController.swift */,
+				52D015F21E45281D001F4A75 /* AQTextViewController.swift */,
+				52D015F41E4536AF001F4A75 /* AQDeviceInfoViewController.swift */,
+			);
+			name = Devices;
+			sourceTree = "<group>";
+		};
+		52DBE5261E4F44E300B3CCE2 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				5282B1BD1E4141A5002F99D6 /* AQSettingsViewController.swift */,
+				52DBE5271E4F44FA00B3CCE2 /* AQRemoveNotificationViewController.swift */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		52F4F1F31E460CCC008E3EEC /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				5282B1BF1E4141E6002F99D6 /* AQMainMapViewController.swift */,
+				52F4F1F41E460D6A008E3EEC /* AQFilterListViewController.swift */,
+			);
+			name = Map;
+			sourceTree = "<group>";
+		};
+		6B99DBCDD15C50A6D2480A86 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A7F287390FAA58CCF33F4CAD /* Pods-AquaManager.debug.xcconfig */,
+				24846B63910E5C45BBB3E0DC /* Pods-AquaManager.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		928CD0CDB943A270C5F58499 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FCB7D24A1C4CEB77D8891B0B /* Pods_AquaManager.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5282B1871E409512002F99D6 /* AquaManager */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5282B19A1E409512002F99D6 /* Build configuration list for PBXNativeTarget "AquaManager" */;
+			buildPhases = (
+				81A7339C399FA6873A6F6BC3 /* [CP] Check Pods Manifest.lock */,
+				5282B1841E409512002F99D6 /* Sources */,
+				5282B1851E409512002F99D6 /* Frameworks */,
+				5282B1861E409512002F99D6 /* Resources */,
+				6F9EEDFF63ACF68BC43C094F /* [CP] Embed Pods Frameworks */,
+				2E8A6BAF1CE0A85C420E1B76 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AquaManager;
+			productName = AquaManager;
+			productReference = 5282B1881E409512002F99D6 /* AquaManager.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5282B1801E409512002F99D6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = Solidum;
+				TargetAttributes = {
+					5282B1871E409512002F99D6 = {
+						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = 36LMU6U9B9;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 5282B1831E409512002F99D6 /* Build configuration list for PBXProject "AquaManager" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5282B17F1E409512002F99D6;
+			productRefGroup = 5282B1891E409512002F99D6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5282B1871E409512002F99D6 /* AquaManager */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5282B1861E409512002F99D6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5282B1961E409512002F99D6 /* LaunchScreen.storyboard in Resources */,
+				5282B1931E409512002F99D6 /* Assets.xcassets in Resources */,
+				5282B1911E409512002F99D6 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2E8A6BAF1CE0A85C420E1B76 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AquaManager/Pods-AquaManager-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6F9EEDFF63ACF68BC43C094F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AquaManager/Pods-AquaManager-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		81A7339C399FA6873A6F6BC3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5282B1841E409512002F99D6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52F4F1F51E460D6A008E3EEC /* AQFilterListViewController.swift in Sources */,
+				52A91E411E4CFFC4001D7D9B /* AQGeofence.swift in Sources */,
+				5282B1BA1E414160002F99D6 /* AQDevicesViewController.swift in Sources */,
+				5282B1A11E40D2B4002F99D6 /* AlamofireManager.swift in Sources */,
+				5212D41F1E562676006F5BB4 /* AQBaseNotificationRequest.swift in Sources */,
+				5212D4211E564291006F5BB4 /* AQNotificationInfoViewController.swift in Sources */,
+				5282B1AF1E412241002F99D6 /* AQSimpleResponse.swift in Sources */,
+				522F09EB1E4233DD005C2188 /* AQUtils.swift in Sources */,
+				5282B1AB1E4120A2002F99D6 /* AQSensResponse.swift in Sources */,
+				52DBE5231E4F3E2800B3CCE2 /* AQManager.swift in Sources */,
+				5282B1A81E410465002F99D6 /* AQSensData.swift in Sources */,
+				52FCE16D1E4E78AA0090F683 /* AQSettingsManager.swift in Sources */,
+				5282B1B41E414097002F99D6 /* AQMainViewController.swift in Sources */,
+				5282B1C01E4141E6002F99D6 /* AQMainMapViewController.swift in Sources */,
+				52D015F11E4527ED001F4A75 /* AQRawDataListController.swift in Sources */,
+				52D015E51E44F076001F4A75 /* AQDevice.swift in Sources */,
+				52F4F1EB1E45E304008E3EEC /* AQCoreDataManager.swift in Sources */,
+				5293249F1E54CAED00036949 /* AQNotification.swift in Sources */,
+				52D015EE1E451AD8001F4A75 /* AQControllerFactory.swift in Sources */,
+				5282B19F1E40D28E002F99D6 /* AQApiClient.swift in Sources */,
+				52DBE5281E4F44FA00B3CCE2 /* AQRemoveNotificationViewController.swift in Sources */,
+				52F4F1F01E45E561008E3EEC /* AQDevice+Operations.swift in Sources */,
+				52D015E91E44FB8D001F4A75 /* AQDevicesBusinessLayer.swift in Sources */,
+				52F4F1ED1E45E42E008E3EEC /* AQDeviceManager.swift in Sources */,
+				529324A51E54F8CB00036949 /* AQNotificationsManager.swift in Sources */,
+				5282B1C41E4142CF002F99D6 /* AQAddNotificationViewController.swift in Sources */,
+				5282B1C81E4147E0002F99D6 /* AQAddGeofenceViewController.swift in Sources */,
+				529324A11E54CAFC00036949 /* AQNotification+Operations.swift in Sources */,
+				5282B1C61E414785002F99D6 /* AQSelectOptionViewController.swift in Sources */,
+				52D015F51E4536AF001F4A75 /* AQDeviceInfoViewController.swift in Sources */,
+				52F4F1F21E460468008E3EEC /* AQNotificationsName.swift in Sources */,
+				52DBE52C1E4F479600B3CCE2 /* AQNotificationApiClient.swift in Sources */,
+				522F09E81E4230C8005C2188 /* StringExtention.swift in Sources */,
+				52D015E71E44F62A001F4A75 /* AQAddDeviceViewController.swift in Sources */,
+				529324A31E54DB2D00036949 /* AQFillNotificationInfoController.swift in Sources */,
+				52A91E3F1E4CFCA4001D7D9B /* AQGeofenceCreationViewController.swift in Sources */,
+				5282B1B11E4122A8002F99D6 /* AQRemoveNotifRequest.swift in Sources */,
+				52F4F1E91E45E1B0008E3EEC /* AquaManagerModel.xcdatamodeld in Sources */,
+				5282B1BC1E414185002F99D6 /* AQGeofencesViewController.swift in Sources */,
+				52D015F31E45281D001F4A75 /* AQTextViewController.swift in Sources */,
+				5282B1B81E41413A002F99D6 /* AQNotificationsViewController.swift in Sources */,
+				522F09E21E4218A0005C2188 /* AQNavigationViewController.swift in Sources */,
+				5282B1BE1E4141A5002F99D6 /* AQSettingsViewController.swift in Sources */,
+				52DBE5251E4F400600B3CCE2 /* UIAlertController+PopOVer.swift in Sources */,
+				52DBE52A1E4F478600B3CCE2 /* AQNotificationsBusinessLayer.swift in Sources */,
+				52A91E451E4D0809001D7D9B /* AQGeofenceManager.swift in Sources */,
+				52A91E431E4CFFDC001D7D9B /* AQGeofence+Operations.swift in Sources */,
+				5282B18C1E409512002F99D6 /* AppDelegate.swift in Sources */,
+				522F09ED1E4233EC005C2188 /* AQConstants.swift in Sources */,
+				5282B1B61E4140AD002F99D6 /* AQBaseViewController.swift in Sources */,
+				5282B1A61E410371002F99D6 /* AQAuthResponse.swift in Sources */,
+				52D015EB1E44FF34001F4A75 /* AQDeviceApiClient.swift in Sources */,
+				5282B1A41E40FC57002F99D6 /* AQAuthRequest.swift in Sources */,
+				522F09E01E421296005C2188 /* AQIntroViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		5282B18F1E409512002F99D6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5282B1901E409512002F99D6 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5282B1941E409512002F99D6 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5282B1951E409512002F99D6 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5282B1981E409512002F99D6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5282B1991E409512002F99D6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5282B19B1E409512002F99D6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A7F287390FAA58CCF33F4CAD /* Pods-AquaManager.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 36LMU6U9B9;
+				INFOPLIST_FILE = AquaManager/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.solidum.aquamanager;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5282B19C1E409512002F99D6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24846B63910E5C45BBB3E0DC /* Pods-AquaManager.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 36LMU6U9B9;
+				INFOPLIST_FILE = AquaManager/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.solidum.aquamanager;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5282B1831E409512002F99D6 /* Build configuration list for PBXProject "AquaManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5282B1981E409512002F99D6 /* Debug */,
+				5282B1991E409512002F99D6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5282B19A1E409512002F99D6 /* Build configuration list for PBXNativeTarget "AquaManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5282B19B1E409512002F99D6 /* Debug */,
+				5282B19C1E409512002F99D6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		52F4F1E71E45E1B0008E3EEC /* AquaManagerModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				52F4F1E81E45E1B0008E3EEC /* AquaManagerModel.xcdatamodel */,
+			);
+			currentVersion = 52F4F1E81E45E1B0008E3EEC /* AquaManagerModel.xcdatamodel */;
+			path = AquaManagerModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 5282B1801E409512002F99D6 /* Project object */;
+}

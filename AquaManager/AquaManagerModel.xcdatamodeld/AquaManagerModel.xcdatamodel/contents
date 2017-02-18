@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="16C67" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="AQDevice" representedClassName=".AQDevice" syncable="YES">
+        <attribute name="aqsensRaw" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="aquaId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="aquaKey" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="markerColor" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pass" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phoneNumber" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="AQGeofence" representedClassName=".AQGeofence" syncable="YES">
+        <attribute name="centerLat" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="centerLon" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="isCircle" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="radius" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
+    <entity name="AQNotification" representedClassName=".AQNotification" syncable="YES">
+        <attribute name="alert" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="aquakey" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="aquaname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="continuous" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="geodata" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="geoname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="geotype" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ntfuuid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="target" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="trigger" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="AQDevice" positionX="-63" positionY="-18" width="128" height="150"/>
+        <element name="AQGeofence" positionX="-63" positionY="36" width="128" height="120"/>
+        <element name="AQNotification" positionX="-63" positionY="45" width="128" height="195"/>
+    </elements>
+</model>
