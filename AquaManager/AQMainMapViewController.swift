@@ -74,7 +74,7 @@ class AQMainMapViewController: AQBaseViewController, AQFilterListDelegate {
             AQUtils.drawCircle(position: geofence.getLocation(), radius: geofence.radius, mapView: self.mapsView)
         }
         else {
-            AQUtils.drawRect(position: geofence.getLocation(), radius: geofence.radius, mapView: self.mapsView)
+            AQUtils.drawRect(coordinates: geofence.getCoordinates(), mapView: self.mapsView)
         }
     }
     

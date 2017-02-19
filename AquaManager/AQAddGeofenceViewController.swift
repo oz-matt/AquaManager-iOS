@@ -26,6 +26,9 @@ class AQAddGeofenceViewController: AQBaseViewController, GMSMapViewDelegate, AQG
     var savingMode: Bool = false
     var delegate: AQAddGeofenceDelegate! = nil
     
+    var polygonMarkers: [GMSMarker] = [GMSMarker]()
+    var polygon: GMSPolygon = GMSPolygon()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.delegate = self
@@ -54,8 +57,56 @@ class AQAddGeofenceViewController: AQBaseViewController, GMSMapViewDelegate, AQG
             AQUtils.drawCircle(position: tempGeofence.coordinate, radius: tempGeofence.radius, mapView: mapView)
         }
         else {
-            AQUtils.drawRect(position: tempGeofence.coordinate, radius: tempGeofence.radius, mapView: mapView)
+            drawPolygon()
         }
+    }
+    
+    func drawPolygon() {
+        // minx miny maxx maxy
+        let box = AQUtils.getBoundingBox(coordinate: tempGeofence.coordinate, radius: Double(tempGeofence.radius))
+        polygonMarkers = [GMSMarker]()
+        let middeltaX = (box[3] - box[1])/2
+        let middeltaY = (box[2] - box[0])/2
+        self.addPolygonMarker(position: CLLocationCoordinate2D(latitude: box[0], longitude: box[1]))
+        self.addPolygonMarker(position: CLLocationCoordinate2D(latitude: box[0], longitude: box[1] + middeltaX))
+        self.addPolygonMarker(position: CLLocationCoordinate2D(latitude: box[0], longitude: box[3]))
+        self.addPolygonMarker(position: CLLocationCoordinate2D(latitude: box[0] + middeltaY, longitude:  box[3]))
+        self.addPolygonMarker(position: CLLocationCoordinate2D(latitude: box[2], longitude: box[3]))
+        self.addPolygonMarker(position: CLLocationCoordinate2D(latitude: box[2], longitude: box[3] - middeltaX))
+        self.addPolygonMarker(position: CLLocationCoordinate2D(latitude: box[2], longitude: box[1]))
+        self.addPolygonMarker(position: CLLocationCoordinate2D(latitude: box[2] - middeltaY, longitude: box[1]))
+        self.updatePolygonArea()
+    }
+    
+    func addPolygonMarker(position: CLLocationCoordinate2D) {
+        let mark = GMSMarker(position: position)
+        mark.icon = AQUtils.resizeImage(image: UIImage(named: "orb")!, targetSize: CGSize(width: 30, height: 30))
+        mark.map = self.mapView
+        mark.groundAnchor = CGPoint(x: 0.5, y: 0.5)
+        mark.isDraggable = true
+        polygonMarkers.append(mark)
+    }
+    
+    func mapView(_ mapView: GMSMapView, didEndDragging marker: GMSMarker) {
+        updatePolygonArea()
+    }
+    
+    func updatePolygonArea() {
+        let path = GMSMutablePath()
+        
+        for mark in polygonMarkers {
+            path.add(mark.position)
+        }
+        
+        if polygon != nil {
+            polygon.map = nil
+        }
+        
+        polygon = GMSPolygon(path: path)
+        polygon.fillColor = AQColor.AREA_COLOR
+        polygon.strokeWidth = 5
+        polygon.strokeColor = AQColor.AREA_BORDER_COLOR
+        polygon.map = mapView
     }
     
     func addMarker(position: CLLocationCoordinate2D) {
@@ -83,6 +134,16 @@ class AQAddGeofenceViewController: AQBaseViewController, GMSMapViewDelegate, AQG
         newGeofence.isCircle = tempGeofence.isCircle
         newGeofence.centerLat = tempGeofence.coordinate.latitude
         newGeofence.centerLon = tempGeofence.coordinate.longitude
+        
+        if tempGeofence.isCircle == false {
+            var arr = [Double]()
+            for mark in polygonMarkers {
+                arr.append(mark.position.latitude)
+                arr.append(mark.position.longitude)
+            }
+            newGeofence.coordinates = NSKeyedArchiver.archivedData(withRootObject: arr)
+        }
+        
         AQCoreDataManager.manager.saveContext()
         delegate.refreshList()
         self.navigationController?.popViewController(animated: true)

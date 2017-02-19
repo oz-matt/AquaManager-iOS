@@ -92,25 +92,27 @@ class AQNotificationBusinessLayer {
             data.geotype = "polygon"
         }
         if let geofence = not.geofence {
-            let loc = CLLocationCoordinate2D(latitude: geofence.centerLat, longitude: geofence.centerLon)
-            let box = AQUtils.getBoundingBox(coordinate: loc, radius: Double(geofence.radius))
-            data.geodata = ["pt1_lat":0,
-                            "pt1_lon":0,
-                            "pt2_lat":0,
-                            "pt2_lon":0,
-                            "pt3_lat":0,
-                            "pt3_lon":0,
-                            "pt4_lat":0,
-                            "pt4_lon":0,
-                            "pt5_lat":0,
-                            "pt5_lon":0,
-                            "pt6_lat":0,
-                            "pt6_lon":0,
-                            "pt7_lat":0,
-                            "pt7_lon":0,
-                            "pt8_lat":0,
-                            "pt8_lon":0,
-            ]
+            let loc = geofence.getCoordinates()
+            if loc.count == 16 {
+                data.geodata = ["pt1_lat":loc[0],
+                                "pt1_lon":loc[1],
+                                "pt2_lat":loc[2],
+                                "pt2_lon":loc[3],
+                                "pt3_lat":loc[4],
+                                "pt3_lon":loc[5],
+                                "pt4_lat":loc[6],
+                                "pt4_lon":loc[7],
+                                "pt5_lat":loc[8],
+                                "pt5_lon":loc[9],
+                                "pt6_lat":loc[10],
+                                "pt6_lon":loc[11],
+                                "pt7_lat":loc[12],
+                                "pt7_lon":loc[13],
+                                "pt8_lat":loc[14],
+                                "pt8_lon":loc[15]
+                ]
+            }
+            
         }
         
         self.insertNotification(request: request, completion: completion)

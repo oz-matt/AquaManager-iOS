@@ -47,6 +47,7 @@ class AQGeofenceCreationViewController: AQBaseViewController, UITextFieldDelegat
             tempGeofence.radius = Float(radiusTextField.text!)!
             tempGeofence.isCircle = segmentSize.selectedSegmentIndex == 0
             tempGeofence.coordinate = self.centerCoordinate
+
             self.delegate.createGeofence(geofence: tempGeofence)
             self.dismiss(animated: true, completion: nil)
         }

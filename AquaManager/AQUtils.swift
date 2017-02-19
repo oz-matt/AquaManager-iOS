@@ -186,7 +186,7 @@ class AQUtils {
         let minLong = coordinate.longitude - deltaLong
         let maxLat = coordinate.latitude + deltaLat
         let maxLon = coordinate.longitude + deltaLong
-        
+        // miny minx maxy maxx
         box.append(minLat)
         box.append(minLong)
         box.append(maxLat)
@@ -202,19 +202,20 @@ class AQUtils {
         circ.map = mapView
     }
     
-    static func drawRect(position: CLLocationCoordinate2D, radius: Float, mapView: GMSMapView) {
-        let box = AQUtils.getBoundingBox(coordinate: position, radius: Double(radius))
+    static func drawRect(coordinates: [Double], mapView: GMSMapView) {
+        if coordinates.count != 16 {
+            return 
+        }
         let path = GMSMutablePath()
-        
-        let leftTop = CLLocationCoordinate2D(latitude: box[0], longitude: box[1])
-        let leftBot = CLLocationCoordinate2D(latitude: box[0], longitude: box[3])
-        let rightTop = CLLocationCoordinate2D(latitude: box[2], longitude: box[1])
-        let rightBot = CLLocationCoordinate2D(latitude: box[2], longitude: box[3])
-        
-        path.add(leftTop)
-        path.add(leftBot)
-        path.add(rightBot)
-        path.add(rightTop)
+        path.add(CLLocationCoordinate2D(latitude: coordinates[0], longitude: coordinates[1]))
+        path.add(CLLocationCoordinate2D(latitude: coordinates[2], longitude: coordinates[3]))
+        path.add(CLLocationCoordinate2D(latitude: coordinates[4], longitude: coordinates[5]))
+        path.add(CLLocationCoordinate2D(latitude: coordinates[6], longitude: coordinates[7]))
+        path.add(CLLocationCoordinate2D(latitude: coordinates[8], longitude: coordinates[9]))
+        path.add(CLLocationCoordinate2D(latitude: coordinates[10], longitude: coordinates[11]))
+        path.add(CLLocationCoordinate2D(latitude: coordinates[12], longitude: coordinates[13]))
+        path.add(CLLocationCoordinate2D(latitude: coordinates[14], longitude: coordinates[15]))
+
         let rect = GMSPolygon(path: path)
         rect.fillColor = AQColor.AREA_COLOR
         rect.strokeWidth = 5
