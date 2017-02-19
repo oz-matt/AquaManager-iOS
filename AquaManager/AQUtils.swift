@@ -176,11 +176,11 @@ class AQUtils {
     static func getBoundingBox(coordinate: CLLocationCoordinate2D, radius: Double) -> [Double] {
         let rad = radius * 1609.34
         var box = [Double]()
-        let latRadian = coordinate.latitude * (180.0 / M_PI)
+        let latRadian = coordinate.latitude * (M_PI / 180.0)
         let degLatKm = 110.574235
         let degLongKm = 110.572833 * cos(latRadian)
-        let deltaLat = rad / 10000 / degLatKm
-        let deltaLong = rad / 10000 / degLongKm
+        let deltaLat = rad / 1000 / degLatKm
+        let deltaLong = rad / 1000 / degLongKm
         
         let minLat = coordinate.latitude - deltaLat
         let minLong = coordinate.longitude - deltaLong
