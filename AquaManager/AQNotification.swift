@@ -32,4 +32,18 @@ class AQNotification: NSManagedObject {
     @NSManaged var geodata: String?
     @NSManaged var aquakey: String?
     @NSManaged var localId: Int
+    
+    func getUniqueId() -> String {
+        if ntfuuid == nil {
+            return ""
+        }
+        return ntfuuid!
+    }
+    
+    func getAquaName() -> String {
+        if aquaname != nil {
+            return aquaname!
+        }
+        return ""
+    }
 }

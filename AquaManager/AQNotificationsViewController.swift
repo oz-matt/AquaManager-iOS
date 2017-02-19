@@ -49,7 +49,7 @@ class AQNotificationsViewController: AQBaseViewController, AQAddNotificationDele
         actionSheetController.addAction(infoActionButton)
 
         let deleteActionButton = UIAlertAction(title: "Remove", style: .destructive) { action -> Void in
-            self.showNotificationInfo(not: not)
+            self.deleteNotification(not: not)
         }
         actionSheetController.addAction(deleteActionButton)
         if AQManager.manager.isIpad() {
@@ -89,6 +89,28 @@ class AQNotificationsViewController: AQBaseViewController, AQAddNotificationDele
                 self.handleNotificationSuccess(result: result, temp: temp)
             })
         }
+    }
+    
+    func deleteNotification(not: AQNotification) {
+        self.showLoadingHUD()
+        
+        layer.removeNotificationById(notId: not.getUniqueId(), name: not.getAquaName()) { (result, success) in
+            if success {
+                AQNotification.removeNotification(uniqueId: not.getUniqueId())
+                AQNotificationsManager.manager.reloadNotifications()
+                self.tableView.reloadData()
+            }
+            else {
+                if !result.blank {
+                    self.showCustomAlert("Error", text: result)
+                }
+                else {
+                    self.showCustomAlert("Error", text: "Server error")
+                }
+            }
+            self.hideHUD()
+        }
+        
     }
     
     func handleNotificationSuccess(result: String, temp: AQTempNotification) {

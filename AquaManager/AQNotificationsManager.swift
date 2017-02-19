@@ -22,4 +22,22 @@ class AQNotificationsManager {
         notifications = AQNotification.fetchAllNotifications()
     }
     
+    func getUniqueId() -> String {
+        self.reloadNotifications()
+        
+        var uuid = UUID().uuidString
+        while (uniqueIdExist(nid: uuid)) {
+            uuid = UUID().uuidString
+        }
+        return uuid.lowercased().substring(to: uuid.index(uuid.startIndex, offsetBy: 8))
+    }
+    
+    func uniqueIdExist(nid: String) -> Bool {
+        for not in notifications {
+            if not.ntfuuid == nid {
+                return true
+            }
+        }
+        return false
+    }
 }

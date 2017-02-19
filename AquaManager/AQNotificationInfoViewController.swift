@@ -86,7 +86,7 @@ class AQNotificationInfoViewController: AQBaseViewController, UITableViewDataSou
         }
         if indexPath.row == 9 {
             cell.lblMain.text = "ID"
-            cell.lblSub.text = ""
+            cell.lblSub.text = not.getUniqueId()
         }
         
         return cell

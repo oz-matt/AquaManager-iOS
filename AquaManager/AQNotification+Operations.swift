@@ -20,6 +20,7 @@ extension AQNotification {
         notification.continuous = temp.continuous
         notification.trigger = temp.trigger.rawValue
         notification.aquakey = temp.device?.aquaKey
+        notification.ntfuuid = temp.notId
         if temp.geofence != nil {
             if temp.geofence!.isCircle {
                notification.geotype = "circle"
@@ -53,19 +54,19 @@ extension AQNotification {
         }
     }
     
-    /*static func removeGeofence(geofence: AQGeofence) {
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "AQGeofence")
-        fetchRequest.predicate = NSPredicate(format: "name == %@", geofence.getName())
+    static func removeNotification(uniqueId: String) {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "AQNotification")
+        fetchRequest.predicate = NSPredicate(format: "ntfuuid == %@", uniqueId)
         do {
             let results = try AQCoreDataManager.manager.managedObjectContext.fetch(fetchRequest)
-            let devices = results as! [NSManagedObject]
-            if devices.count > 0 {
-                AQCoreDataManager.manager._managedObjectContext?.delete(devices[0])
+            let nots = results as! [NSManagedObject]
+            if nots.count > 0 {
+                AQCoreDataManager.manager._managedObjectContext?.delete(nots[0])
                 AQCoreDataManager.manager.saveContext()
             }
             else {
             }
         } catch let _ as NSError {
         }
-    }*/
+    }
 }

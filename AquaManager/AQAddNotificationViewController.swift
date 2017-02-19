@@ -23,6 +23,7 @@ class AQTempNotification {
     var continuous: Bool = true
     var target: String?
     var macAdress: String?
+    var notId: String?
 }
 
 protocol AQAddNotificationDelegate {
@@ -298,6 +299,7 @@ class AQAddNotificationViewController: AQBaseViewController, AQFilterListDelegat
     
     @IBAction func handleSubmitButton(_ sender: UIButton) {
         if validateNotification() {
+           self.tempNotification.notId = AQNotificationsManager.manager.getUniqueId()
            self.delegate.createNewNotification(temp: self.tempNotification)
            self.dismiss(animated: true, completion: nil)
         }

@@ -43,6 +43,7 @@ class AQNotificationBusinessLayer {
         data.target = not.target
         data.trigger = not.trigger.rawValue
         data.continuous = not.continuous
+        data.ntfuuid = not.notId
         
         self.insertNotification(request: request, completion: completion)
     }
@@ -57,6 +58,7 @@ class AQNotificationBusinessLayer {
         data.target = not.target
         data.trigger = not.trigger.rawValue
         data.continuous = not.continuous
+        data.ntfuuid = not.notId
         data.geoname = not.geofence?.getName()
         if not.geofence?.isCircle == true {
            data.geotype = "circle"
@@ -81,6 +83,7 @@ class AQNotificationBusinessLayer {
         data.target = not.target
         data.trigger = not.trigger.rawValue
         data.continuous = not.continuous
+        data.ntfuuid = not.notId
         data.geoname = not.geofence?.getName()
         if not.geofence?.isCircle == true {
             data.geotype = "circle"
