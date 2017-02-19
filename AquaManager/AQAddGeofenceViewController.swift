@@ -87,4 +87,13 @@ class AQAddGeofenceViewController: AQBaseViewController, GMSMapViewDelegate, AQG
         delegate.refreshList()
         self.navigationController?.popViewController(animated: true)
     }
+    
+    @IBAction func handleZoomInButton(_ sender: UIButton) {
+        self.mapView.animate(toZoom: self.mapView.camera.zoom + 1)
+    }
+    
+    @IBAction func handleZoomOutButton(_ sender: UIButton) {
+        self.mapView.animate(toZoom: self.mapView.camera.zoom - 1)
+    }
+
 }

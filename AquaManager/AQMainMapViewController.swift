@@ -101,4 +101,13 @@ class AQMainMapViewController: AQBaseViewController, AQFilterListDelegate {
             self.markersList.append(marker)
         }
     }
+    
+    @IBAction func handleZoomInButton(_ sender: UIButton) {
+        self.mapsView.animate(toZoom: self.mapsView.camera.zoom + 1)
+    }
+    
+    @IBAction func handleZoomOutButton(_ sender: UIButton) {
+        self.mapsView.animate(toZoom: self.mapsView.camera.zoom - 1)
+    }
+    
 }
