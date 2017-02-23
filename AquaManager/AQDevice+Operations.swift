@@ -80,6 +80,24 @@ extension AQDevice {
         }
     }
     
+    static func ifDeviceNameExists(name: String) -> Bool {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "AQDevice")
+        fetchRequest.predicate = NSPredicate(format: "name == %@", name)
+        
+        do {
+            let results = try AQCoreDataManager.manager.managedObjectContext.fetch(fetchRequest)
+            let devices = results as! [NSManagedObject]
+            if devices.count > 0 {
+                return true
+            }
+            else {
+                return false
+            }
+        } catch let _ as NSError {
+            return false
+        }
+    }
+    
     static func removeDevice(deviceId: String) {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "AQDevice")
         fetchRequest.predicate = NSPredicate(format: "aquaId == %@", deviceId)

@@ -39,19 +39,19 @@ class AQGeofence: NSManagedObject {
     }
     
     func calculateArea() -> Int {
-        let path = GMSMutablePath()
+        var path = [CLLocationCoordinate2D]()
         let coordinates = getCoordinates()
         if coordinates.count == 16 {
-            path.add(CLLocationCoordinate2D(latitude: coordinates[0], longitude: coordinates[1]))
-            path.add(CLLocationCoordinate2D(latitude: coordinates[2], longitude: coordinates[3]))
-            path.add(CLLocationCoordinate2D(latitude: coordinates[4], longitude: coordinates[5]))
-            path.add(CLLocationCoordinate2D(latitude: coordinates[6], longitude: coordinates[7]))
-            path.add(CLLocationCoordinate2D(latitude: coordinates[8], longitude: coordinates[9]))
-            path.add(CLLocationCoordinate2D(latitude: coordinates[10], longitude: coordinates[11]))
-            path.add(CLLocationCoordinate2D(latitude: coordinates[12], longitude: coordinates[13]))
-            path.add(CLLocationCoordinate2D(latitude: coordinates[14], longitude: coordinates[15]))
+            path.append(CLLocationCoordinate2D(latitude: coordinates[0], longitude: coordinates[1]))
+            path.append(CLLocationCoordinate2D(latitude: coordinates[2], longitude: coordinates[3]))
+            path.append(CLLocationCoordinate2D(latitude: coordinates[4], longitude: coordinates[5]))
+            path.append(CLLocationCoordinate2D(latitude: coordinates[6], longitude: coordinates[7]))
+            path.append(CLLocationCoordinate2D(latitude: coordinates[8], longitude: coordinates[9]))
+            path.append(CLLocationCoordinate2D(latitude: coordinates[10], longitude: coordinates[11]))
+            path.append(CLLocationCoordinate2D(latitude: coordinates[12], longitude: coordinates[13]))
+            path.append(CLLocationCoordinate2D(latitude: coordinates[14], longitude: coordinates[15]))
             
-            let area = GMSGeometryArea(path)/1609.34
+            let area = AQMapFormulas.regionArea(locations: path)/1609.344
             return Int(area)
         }
         return 0

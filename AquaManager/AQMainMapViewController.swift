@@ -84,17 +84,17 @@ class AQMainMapViewController: AQBaseViewController, AQFilterListDelegate {
     }
     
     func setCameraProperly() {
-        if markersList.count > 1 {
-           let bounds = GMSCoordinateBounds(coordinate: markersList[0].position, coordinate: markersList[1].position)
-           for marker in markersList {
-               bounds.includingCoordinate(marker.position)
-           }
-            self.mapsView.animate(with: GMSCameraUpdate.fit(bounds, withPadding: 50))
-        }
-        else if markersList.count == 1 {
-            self.mapsView.animate(toLocation: markersList[0].position)
+        var bounds = GMSCoordinateBounds()
+        
+        for marker in markersList {
+            bounds = bounds.includingCoordinate(marker.position)
         }
         
+        for geo in geofencesList {
+            bounds = bounds.includingCoordinate(geo.getLocation())
+        }
+        
+        self.mapsView.animate(with: GMSCameraUpdate.fit(bounds, withPadding: 50))
     }
     
     func addMarkerToMap(device: AQDevice) {

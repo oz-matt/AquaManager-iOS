@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3342C2481A9F2D5AD67F6286 /* Pods_AquaManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCB7D24A1C4CEB77D8891B0B /* Pods_AquaManager.framework */; };
+		520F44521E5F7D24009FDC89 /* AQMapFormulas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520F44511E5F7D24009FDC89 /* AQMapFormulas.swift */; };
 		5212D41F1E562676006F5BB4 /* AQBaseNotificationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5212D41E1E562676006F5BB4 /* AQBaseNotificationRequest.swift */; };
 		5212D4211E564291006F5BB4 /* AQNotificationInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5212D4201E564291006F5BB4 /* AQNotificationInfoViewController.swift */; };
 		522F09E01E421296005C2188 /* AQIntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522F09DF1E421296005C2188 /* AQIntroViewController.swift */; };
@@ -69,6 +70,7 @@
 
 /* Begin PBXFileReference section */
 		24846B63910E5C45BBB3E0DC /* Pods-AquaManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AquaManager.release.xcconfig"; path = "Pods/Target Support Files/Pods-AquaManager/Pods-AquaManager.release.xcconfig"; sourceTree = "<group>"; };
+		520F44511E5F7D24009FDC89 /* AQMapFormulas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AQMapFormulas.swift; sourceTree = "<group>"; };
 		5212D41E1E562676006F5BB4 /* AQBaseNotificationRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AQBaseNotificationRequest.swift; sourceTree = "<group>"; };
 		5212D4201E564291006F5BB4 /* AQNotificationInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AQNotificationInfoViewController.swift; sourceTree = "<group>"; };
 		522F09DF1E421296005C2188 /* AQIntroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AQIntroViewController.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				522F09EA1E4233DD005C2188 /* AQUtils.swift */,
 				522F09EC1E4233EC005C2188 /* AQConstants.swift */,
 				52F4F1F11E460468008E3EEC /* AQNotificationsName.swift */,
+				520F44511E5F7D24009FDC89 /* AQMapFormulas.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -546,6 +549,7 @@
 				5282B1B61E4140AD002F99D6 /* AQBaseViewController.swift in Sources */,
 				5282B1A61E410371002F99D6 /* AQAuthResponse.swift in Sources */,
 				52D015EB1E44FF34001F4A75 /* AQDeviceApiClient.swift in Sources */,
+				520F44521E5F7D24009FDC89 /* AQMapFormulas.swift in Sources */,
 				5282B1A41E40FC57002F99D6 /* AQAuthRequest.swift in Sources */,
 				522F09E01E421296005C2188 /* AQIntroViewController.swift in Sources */,
 			);

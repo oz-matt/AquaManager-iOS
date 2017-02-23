@@ -204,7 +204,7 @@ class AQUtils {
     
     static func drawRect(coordinates: [Double], mapView: GMSMapView) {
         if coordinates.count != 16 {
-            return 
+           return
         }
         let path = GMSMutablePath()
         path.add(CLLocationCoordinate2D(latitude: coordinates[0], longitude: coordinates[1]))

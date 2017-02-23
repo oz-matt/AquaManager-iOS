@@ -38,8 +38,8 @@ class AQAddDeviceViewController: AQBaseViewController, UITextFieldDelegate {
         passcodeTextField.returnKeyType = .done
         aquaIdTextField.returnKeyType = .done
         
-        aquaIdTextField.text = "8DC8B055"
-        passcodeTextField.text  = "849DEEE3"
+        aquaIdTextField.text = "8DC8B056"
+        passcodeTextField.text  = "849DEEE4"
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -48,7 +48,17 @@ class AQAddDeviceViewController: AQBaseViewController, UITextFieldDelegate {
     }
     
     @IBAction func handleCancelButton(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
+        if currentState == .fillData {
+            self.dismiss(animated: true, completion: nil)
+        }
+        if currentState == .setName {
+            if let aquaId = self.device!.getAquaId() {
+               AQDevice.removeDevice(deviceId: aquaId)
+            }
+            
+            self.dismiss(animated: true, completion: nil)
+        }
+        
     }
     @IBAction func handleSubmitButton(_ sender: UIButton) {
         if currentState == .fillData {
@@ -80,10 +90,12 @@ class AQAddDeviceViewController: AQBaseViewController, UITextFieldDelegate {
             self.showAlertWithTitle("Error", message: "Please fill name")
         }
         else {
-            device!.name = aquaIdTextField.text!
-            AQDevice.updateDevice(device: device!)
-            self.delegate.deviceAdded(device: self.device!)
-            self.dismiss(animated: true, completion: nil)
+            if validateDeviceName() {
+                device!.name = aquaIdTextField.text!
+                AQDevice.updateDevice(device: device!)
+                self.delegate.deviceAdded(device: self.device!)
+                self.dismiss(animated: true, completion: nil)
+            }
         }
     }
     
@@ -101,6 +113,16 @@ class AQAddDeviceViewController: AQBaseViewController, UITextFieldDelegate {
             self.view.layoutIfNeeded()
         }
         
+    }
+    
+    func validateDeviceName() -> Bool {
+        if !AQDevice.ifDeviceNameExists(name: aquaIdTextField.text!) {
+           return true
+        }
+        else {
+            self.showAlertWithTitle("Error", message: "Device with this name already exists")
+            return false
+        }
     }
     
     func validateFields() -> Bool {
