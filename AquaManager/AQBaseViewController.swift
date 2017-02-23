@@ -59,6 +59,9 @@ class AQBaseViewController: UIViewController {
     }
     
     func showLoadingHUD() {
+        self.showHUDWithLabel("")
+    }
+    
     func showToastPopUp(_ text: String) {
         var toast = MBProgressHUD()
         toast = MBProgressHUD.showAdded(to: self.view, animated: true)
@@ -70,8 +73,6 @@ class AQBaseViewController: UIViewController {
         toast.yOffset = CGFloat(self.toastYOffset)
         toast.removeFromSuperViewOnHide = true
         toast.hide(true, afterDelay: 3)
-    }
-        self.showHUDWithLabel("")
     }
     
     func showCustomAlert(_ title: String, text: String) {

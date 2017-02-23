@@ -27,6 +27,11 @@ class AQMainMapViewController: AQBaseViewController, AQFilterListDelegate {
         self.updateMapMarkers()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = false
+    }
+    
     func showFilterScreen() {
         let vc = AQControllerFactory.factory.getFilterListViewController()
         vc.delegate = self

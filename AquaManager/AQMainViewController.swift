@@ -28,6 +28,7 @@ class AQMainViewController: AQBaseViewController, UIPageViewControllerDelegate, 
         self.navigationController?.navigationBar.isHidden = true
         self.fillContainerWithViewControllers()
         self.setupBottonTab()
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
     }
     
     override func viewWillAppear(_ animated: Bool) {
