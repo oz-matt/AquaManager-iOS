@@ -201,11 +201,12 @@ class AQDeviceInfoViewController: AQBaseViewController, UITableViewDelegate, UIT
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         if indexPath.row == 5 {
-            showColorsOptions()
+            let cell = tableView.cellForRow(at: indexPath)
+            showColorsOptions(view:cell)
         }
     }
     
-    func showColorsOptions() {
+    func showColorsOptions(view: UIView?) {
         let actionSheetController = UIAlertController(title: "Marker Colors", message: nil, preferredStyle: .actionSheet)
         let cancelActionButton = UIAlertAction(title: "Cancel", style: .cancel) { action -> Void in
         }
@@ -252,6 +253,16 @@ class AQDeviceInfoViewController: AQBaseViewController, UITableViewDelegate, UIT
             self.tableView.reloadData()
         }
         actionSheetController.addAction(color7ActionButton)
+        
+        if AQManager.manager.isIpad() {
+            if view != nil {
+               actionSheetController.showInView(view: view!)
+            }
+            else {
+               actionSheetController.showInView(view: self.tableView)
+            }
+            
+        }
         self.present(actionSheetController, animated: true, completion: nil)
     }
 }

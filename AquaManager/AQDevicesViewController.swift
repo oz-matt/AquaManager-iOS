@@ -75,6 +75,10 @@ class AQDevicesViewController: AQBaseViewController, UITableViewDelegate, UITabl
             self.removeDevice(device: device)
         }
         actionSheetController.addAction(deleteActionButton)
+        if AQManager.manager.isIpad() {
+             actionSheetController.showInView(view: sender)
+        }
+        
         self.present(actionSheetController, animated: true, completion: nil)
     }
     

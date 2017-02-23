@@ -51,14 +51,6 @@ class AQBaseViewController: UIViewController {
         self.progressHUD.hide(true, afterDelay: AQConstants.REQUEST_TIMEOUT)
     }
     
-    func showHUDWithLabelNoTimeOut(_ label: String) {
-        print("Show HUD: \(self)")
-        
-        self.progressHUD = MBProgressHUD.showAdded(to: self.view, animated: true)
-        self.progressHUD.color = AQColor.DARK_BLUE_BASIC
-        self.progressHUD.labelText = label
-        self.progressHUD.bringSubview(toFront: self.view)
-    }
     
     func hideHUD() {
         DispatchQueue.main.async {
@@ -67,23 +59,6 @@ class AQBaseViewController: UIViewController {
     }
     
     func showLoadingHUD() {
-        self.showHUDWithLabel("Loading...")
-    }
-    
-    func showLoadingHUDNoTimeOut() {
-        self.showHUDWithLabelNoTimeOut("Loading...")
-    }
-    
-    func showLoadingWithCustomCenter(_ center: Float) {
-        var progress = MBProgressHUD()
-        progress = MBProgressHUD.showAdded(to: self.view, animated: true)
-        progress.yOffset = CGFloat(center)
-        progress.color = AQColor.DARK_BLUE_BASIC
-        progress.labelText = "Loading..."
-        progress.bringSubview(toFront: self.view)
-        progress.hide(true, afterDelay: AQConstants.REQUEST_TIMEOUT)
-    }
-    
     func showToastPopUp(_ text: String) {
         var toast = MBProgressHUD()
         toast = MBProgressHUD.showAdded(to: self.view, animated: true)
@@ -96,28 +71,7 @@ class AQBaseViewController: UIViewController {
         toast.removeFromSuperViewOnHide = true
         toast.hide(true, afterDelay: 3)
     }
-    
-    func showMultiLineMessage(_ text: String) {
-        var hud = MBProgressHUD()
-        hud = MBProgressHUD.showAdded(to: self.view, animated: true)
-        let width = UIScreen.main.bounds.width - 60
-        let view: UIView = UIView(frame: CGRect(x: 0, y: 0, width: width, height: 40))
-        let label: UILabel = UILabel(frame: view.frame)
-        label.text = text
-        label.textAlignment = .center
-        label.numberOfLines = 3
-        label.font = UIFont(name: AQFonts.FONT_REGULAR, size: 14)
-        label.textColor = UIColor.white
-        label.adjustsFontSizeToFitWidth = true
-        label.minimumScaleFactor = 0.5
-        view.addSubview(label)
-        hud.mode = .customView
-        hud.customView = view
-        hud.minSize = CGSize(width: width, height: 50)
-        hud.margin = 5
-        hud.yOffset = CGFloat(self.toastYOffset)
-        hud.removeFromSuperViewOnHide = true
-        hud.hide(true, afterDelay: 3)
+        self.showHUDWithLabel("")
     }
     
     func showCustomAlert(_ title: String, text: String) {
