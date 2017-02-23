@@ -369,6 +369,7 @@
 				5282B1861E409512002F99D6 /* Resources */,
 				6F9EEDFF63ACF68BC43C094F /* [CP] Embed Pods Frameworks */,
 				2E8A6BAF1CE0A85C420E1B76 /* [CP] Copy Pods Resources */,
+				520F44501E5F5BC2009FDC89 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -442,6 +443,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AquaManager/Pods-AquaManager-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		520F44501E5F5BC2009FDC89 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" aec339e1a475e84097f3faacccc30f905c2c9ed9 c21310e3fd89d3f79624f2c976fede7070084921d1f1f6df95686818552187cd";
 		};
 		6F9EEDFF63ACF68BC43C094F /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
