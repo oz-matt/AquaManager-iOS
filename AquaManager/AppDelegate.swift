@@ -9,6 +9,8 @@
 import UIKit
 import GoogleMaps
 import GooglePlaces
+import Fabric
+import Crashlytics
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -26,6 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let vc = storyboard.instantiateViewController(withIdentifier: "AQNavigationViewController") as! AQNavigationViewController
             self.window?.rootViewController = vc
         }
+        
+        Fabric.with([Crashlytics.self])
         
         return true
     }

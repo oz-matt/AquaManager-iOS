@@ -14,5 +14,7 @@ pod 'MBProgressHUD', '~> 1.0.0'
 pod 'ReachabilitySwift', '~> 3'
 pod 'GooglePlaces'
 pod 'JVFloatLabeledTextField'
+pod 'Fabric'
+pod 'Crashlytics'
 	
 end
