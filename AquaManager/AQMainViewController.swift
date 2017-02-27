@@ -71,6 +71,7 @@ class AQMainViewController: AQBaseViewController, UIPageViewControllerDelegate, 
     
     fileprivate func fillContainerWithViewControllers() {
         self.pageViewController = self.childViewControllers.last as! UIPageViewController
+        self.pageViewController.view.backgroundColor = .black
         self.pageViewController.delegate = self
         self.pageViewController.dataSource = self
         
@@ -155,7 +156,7 @@ class AQMainViewController: AQBaseViewController, UIPageViewControllerDelegate, 
         var currentIndex: Int = pagesArray.index(of: viewController)!
         
         if (currentIndex == 0) {
-            return pagesArray[pagesArray.count - 1]
+            return nil
         }
         
         currentIndex -= 1
@@ -166,11 +167,22 @@ class AQMainViewController: AQBaseViewController, UIPageViewControllerDelegate, 
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         var currentIndex: Int = pagesArray.index(of: viewController)!
         
+        if currentIndex == 2 {
+            return nil
+        }
+        
         currentIndex += 1
         currentIndex = currentIndex % (pagesArray.count);
         return pagesArray[currentIndex]
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        if finished {
+            if let vc = pageViewController.viewControllers?.first {
+                var currentIndex: Int = pagesArray.index(of: vc)!
+                bottomTab.selectedSegmentioIndex = currentIndex
+            }
+            
+        }
     }
 }
