@@ -85,6 +85,7 @@ class AQGeofencesViewController: AQBaseViewController, UITableViewDelegate, UITa
             AQGeofence.removeGeofence(geofence: geofence)
             self.refreshList()
             self.hideHUD()
+            NotificationCenter.default.post(Notification(name: Notification.Name.showToastMessage, object: nil, userInfo: ["text": "Geofence removed."]))
         }))
         self.present(alert, animated: true, completion: nil)
     }

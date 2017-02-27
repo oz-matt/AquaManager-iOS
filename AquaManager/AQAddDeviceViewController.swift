@@ -38,6 +38,9 @@ class AQAddDeviceViewController: AQBaseViewController, UITextFieldDelegate {
         passcodeTextField.returnKeyType = .done
         aquaIdTextField.returnKeyType = .done
         
+        aquaIdTextField.setUpdatePlaceholderColor()
+        passcodeTextField.setUpdatePlaceholderColor()
+        
         aquaIdTextField.text = "8DC8B056"
         passcodeTextField.text  = "849DEEE4"
     }

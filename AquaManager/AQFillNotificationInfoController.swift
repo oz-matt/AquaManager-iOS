@@ -49,6 +49,7 @@ class AQFillNotificationInfoController: AQBaseViewController, UITextFieldDelegat
         }
         self.textField.delegate = self
         self.textField.returnKeyType = .done
+        self.textField.setUpdatePlaceholderColor()
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

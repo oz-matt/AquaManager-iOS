@@ -38,6 +38,8 @@ class AQGeofenceCreationViewController: AQBaseViewController, UITextFieldDelegat
         self.radiusTextField.delegate = self
         self.radiusTextField.returnKeyType = .done
         self.geofenceNameTextField.returnKeyType = .done
+        self.radiusTextField.setUpdatePlaceholderColor()
+        self.geofenceNameTextField.setUpdatePlaceholderColor()
     }
     
     @IBAction func handleConfirmButton(_ sender: UIButton) {

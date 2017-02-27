@@ -12,4 +12,5 @@ import Foundation
 
 extension Notification.Name {
     static let refreshDevices = NSNotification.Name("refreshDevices")
+    static let showToastMessage = NSNotification.Name("showToastMessage")
 }

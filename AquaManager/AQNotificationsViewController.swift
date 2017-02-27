@@ -99,6 +99,7 @@ class AQNotificationsViewController: AQBaseViewController, AQAddNotificationDele
                 AQNotification.removeNotification(uniqueId: not.getUniqueId())
                 AQNotificationsManager.manager.reloadNotifications()
                 self.tableView.reloadData()
+                NotificationCenter.default.post(Notification(name: Notification.Name.showToastMessage, object: nil, userInfo: ["text": "Notification removed."]))
             }
             else {
                 if !result.blank {
@@ -119,6 +120,7 @@ class AQNotificationsViewController: AQBaseViewController, AQAddNotificationDele
             let not = AQNotification.createNewNotification(temp: temp)
             AQNotificationsManager.manager.reloadNotifications()
             self.tableView.reloadData()
+            NotificationCenter.default.post(Notification(name: Notification.Name.showToastMessage, object: nil, userInfo: ["text": "Notification created."]))
             return
         }
         if result == "Full" {

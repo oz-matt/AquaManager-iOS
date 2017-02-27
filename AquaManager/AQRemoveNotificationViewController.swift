@@ -17,6 +17,11 @@ class AQRemoveNotificationViewController: AQBaseViewController {
     
     let layer = AQNotificationBusinessLayer()
     
+    override func viewDidLoad() {
+        deviceNameTextField.setUpdatePlaceholderColor()
+        notificatioIdTextField.setUpdatePlaceholderColor()
+    }
+    
     @IBAction func handleCancelButton(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
@@ -29,6 +34,7 @@ class AQRemoveNotificationViewController: AQBaseViewController {
                     self.showCustomAlert("Error", text: result)
                 }
                 else {
+                    NotificationCenter.default.post(Notification(name: Notification.Name.showToastMessage, object: nil, userInfo: ["text": "Device removed."]))
                     self.dismiss(animated: true, completion: nil)
                 }
                 self.hideHUD()

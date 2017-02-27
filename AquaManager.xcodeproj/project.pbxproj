@@ -38,6 +38,7 @@
 		5282B1C41E4142CF002F99D6 /* AQAddNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5282B1C31E4142CF002F99D6 /* AQAddNotificationViewController.swift */; };
 		5282B1C61E414785002F99D6 /* AQSelectOptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5282B1C51E414785002F99D6 /* AQSelectOptionViewController.swift */; };
 		5282B1C81E4147E0002F99D6 /* AQAddGeofenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5282B1C71E4147E0002F99D6 /* AQAddGeofenceViewController.swift */; };
+		528729521E6466E7009E1125 /* UITextField+Placeholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528729511E6466E7009E1125 /* UITextField+Placeholder.swift */; };
 		5293249F1E54CAED00036949 /* AQNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5293249E1E54CAED00036949 /* AQNotification.swift */; };
 		529324A11E54CAFC00036949 /* AQNotification+Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529324A01E54CAFC00036949 /* AQNotification+Operations.swift */; };
 		529324A31E54DB2D00036949 /* AQFillNotificationInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529324A21E54DB2D00036949 /* AQFillNotificationInfoController.swift */; };
@@ -102,6 +103,7 @@
 		5282B1C31E4142CF002F99D6 /* AQAddNotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AQAddNotificationViewController.swift; sourceTree = "<group>"; };
 		5282B1C51E414785002F99D6 /* AQSelectOptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AQSelectOptionViewController.swift; sourceTree = "<group>"; };
 		5282B1C71E4147E0002F99D6 /* AQAddGeofenceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AQAddGeofenceViewController.swift; sourceTree = "<group>"; };
+		528729511E6466E7009E1125 /* UITextField+Placeholder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+Placeholder.swift"; sourceTree = "<group>"; };
 		5293249E1E54CAED00036949 /* AQNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AQNotification.swift; sourceTree = "<group>"; };
 		529324A01E54CAFC00036949 /* AQNotification+Operations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AQNotification+Operations.swift"; sourceTree = "<group>"; };
 		529324A21E54DB2D00036949 /* AQFillNotificationInfoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AQFillNotificationInfoController.swift; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 				522F09EC1E4233EC005C2188 /* AQConstants.swift */,
 				52F4F1F11E460468008E3EEC /* AQNotificationsName.swift */,
 				520F44511E5F7D24009FDC89 /* AQMapFormulas.swift */,
+				528729511E6466E7009E1125 /* UITextField+Placeholder.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -534,6 +537,7 @@
 				529324A31E54DB2D00036949 /* AQFillNotificationInfoController.swift in Sources */,
 				52A91E3F1E4CFCA4001D7D9B /* AQGeofenceCreationViewController.swift in Sources */,
 				5282B1B11E4122A8002F99D6 /* AQRemoveNotifRequest.swift in Sources */,
+				528729521E6466E7009E1125 /* UITextField+Placeholder.swift in Sources */,
 				52F4F1E91E45E1B0008E3EEC /* AquaManagerModel.xcdatamodeld in Sources */,
 				5282B1BC1E414185002F99D6 /* AQGeofencesViewController.swift in Sources */,
 				52D015F31E45281D001F4A75 /* AQTextViewController.swift in Sources */,

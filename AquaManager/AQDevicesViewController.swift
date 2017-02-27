@@ -97,6 +97,7 @@ class AQDevicesViewController: AQBaseViewController, UITableViewDelegate, UITabl
             AQDeviceManager.manager.removeDevice(device: device)
             self.tableView.reloadData()
             self.hideHUD()
+            NotificationCenter.default.post(Notification(name: Notification.Name.showToastMessage, object: nil, userInfo: ["text": "Device removed."]))
         }))
         self.present(alert, animated: true, completion: nil)
     }
@@ -167,6 +168,7 @@ class AQDevicesViewController: AQBaseViewController, UITableViewDelegate, UITabl
     }
     
     func deviceAdded(device: AQDevice) {
+        NotificationCenter.default.post(Notification(name: Notification.Name.showToastMessage, object: nil, userInfo: ["text": "Device added."]))
         updateDeviceList()
     }
 }

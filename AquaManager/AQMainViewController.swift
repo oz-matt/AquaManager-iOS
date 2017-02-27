@@ -29,6 +29,7 @@ class AQMainViewController: AQBaseViewController, UIPageViewControllerDelegate, 
         self.fillContainerWithViewControllers()
         self.setupBottonTab()
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+        NotificationCenter.default.addObserver(self, selector: #selector(AQMainViewController.showMainToastMessage(not:)), name: Notification.Name.showToastMessage, object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -82,6 +83,14 @@ class AQMainViewController: AQBaseViewController, UIPageViewControllerDelegate, 
         
         pagesArray = [p1, p2, p3]
         self.pageViewController.setViewControllers([p1], direction: .forward, animated: false, completion: nil)
+    }
+    
+    func showMainToastMessage(not: Notification) {
+        if let dict = not.userInfo as? [String: Any] {
+            if let text = dict["text"] as? String {
+                self.showToastPopUp(text)
+            }
+        }
     }
     
     @IBAction func handleMapButton(_ sender: UIButton) {

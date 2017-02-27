@@ -72,7 +72,8 @@ class AQBaseViewController: UIViewController {
         toast.margin = 10
         toast.yOffset = CGFloat(self.toastYOffset)
         toast.removeFromSuperViewOnHide = true
-        toast.hide(true, afterDelay: 3)
+        toast.hide(true, afterDelay: 2)
+        toast.isUserInteractionEnabled = false
     }
     
     func showCustomAlert(_ title: String, text: String) {

@@ -145,6 +145,7 @@ class AQAddGeofenceViewController: AQBaseViewController, GMSMapViewDelegate, AQG
         }
         
         AQCoreDataManager.manager.saveContext()
+        NotificationCenter.default.post(Notification(name: Notification.Name.showToastMessage, object: nil, userInfo: ["text": "Geofence created."]))
         delegate.refreshList()
         self.navigationController?.popViewController(animated: true)
     }
