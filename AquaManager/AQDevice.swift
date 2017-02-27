@@ -99,10 +99,21 @@ class AQDevice: NSManagedObject {
     }
     
     func getTemperature() -> String? {
-        return aqsens?[0].sensorsData?.temperature
+        if aqsens == nil {
+            return nil
+        }
+        
+        if aqsens!.count > 0 {
+           return aqsens?[0].sensorsData?.temperature
+        }
+        return nil
     }
     
     func getHumidity() -> String? {
+        if aqsens?.count == 0 {
+            return ""
+        }
+        
         let value = aqsens?[0].sensorsData?.humidity
         if value != nil {
             return "\(aqsens![0].sensorsData!.humidity!)"
@@ -111,6 +122,9 @@ class AQDevice: NSManagedObject {
     }
     
     func getHeightAboveSea() -> String? {
+        if aqsens?.count == 0 {
+            return ""
+        }
         let value = aqsens?[0].gpsMinimum?.height
         if value != nil {
             return "\(aqsens![0].gpsMinimum!.height!)"
@@ -119,6 +133,9 @@ class AQDevice: NSManagedObject {
     }
     
     func getSpeed() -> String? {
+        if aqsens?.count == 0 {
+            return ""
+        }
         let value = aqsens?[0].gpsMinimum?.gspeed
         if value != nil {
             return "\(aqsens![0].gpsMinimum!.gspeed!)"
@@ -127,6 +144,9 @@ class AQDevice: NSManagedObject {
     }
     
     func getDirection() -> String? {
+        if aqsens?.count == 0 {
+            return ""
+        }
         let value = aqsens?[0].gpsMinimum?.direction
         if value != nil {
             return "\(aqsens![0].gpsMinimum!.direction!)"
@@ -135,6 +155,9 @@ class AQDevice: NSManagedObject {
     }
     
     func getNumberOfSattelites() -> String? {
+        if aqsens?.count == 0 {
+            return ""
+        }
         let value = aqsens?[0].gpsMinimum?.numsat
         if value != nil {
             return "\(aqsens![0].gpsMinimum!.numsat!)"
