@@ -28,6 +28,9 @@ class AQRemoveNotificationViewController: AQBaseViewController {
                 if !success {
                     self.showCustomAlert("Error", text: result)
                 }
+                else {
+                    self.dismiss(animated: true, completion: nil)
+                }
                 self.hideHUD()
             })
         }
