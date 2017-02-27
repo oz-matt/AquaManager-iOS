@@ -396,7 +396,7 @@
 					5282B1871E409512002F99D6 = {
 						CreatedOnToolsVersion = 8.2;
 						DevelopmentTeam = 36LMU6U9B9;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -678,6 +678,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.solidum.aquamanager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "a0da7b95-2a7a-4404-9dd1-584dd297cc5d";
+				PROVISIONING_PROFILE_SPECIFIER = aquaDev;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -688,11 +690,14 @@
 			baseConfigurationReference = 24846B63910E5C45BBB3E0DC /* Pods-AquaManager.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = 36LMU6U9B9;
 				INFOPLIST_FILE = AquaManager/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.solidum.aquamanager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "87a8f097-4ec7-4f03-a351-70359827d83f";
+				PROVISIONING_PROFILE_SPECIFIER = aquaHoc;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

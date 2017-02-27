@@ -136,12 +136,35 @@ class AQFilterListViewController: AQBaseViewController, UITableViewDelegate, UIT
         return UITableViewCell()
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if section == 0 && allDevices.count > 0 && (filterMode == .all || filterMode == .devices) {
-            return "Devices"
+            return 40
         }
         if section == 1 && allGeofences.count > 0 && (filterMode == .all || filterMode == .geofences) {
-            return "Geofences"
+            return 40
+        }
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if section == 0 && allDevices.count > 0 && (filterMode == .all || filterMode == .devices) {
+            let label = UILabel(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 40))
+            label.font = UIFont(name: AQFonts.FONT_MEDIUM, size: 16)
+            label.backgroundColor = UIColor.lightGray
+            label.text = "Devices"
+            label.textAlignment = .center
+            label.textColor = .white
+            
+            return label
+        }
+        if section == 1 && allGeofences.count > 0 && (filterMode == .all || filterMode == .geofences) {
+            let label = UILabel(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 40))
+            label.font = UIFont(name: AQFonts.FONT_MEDIUM, size: 16)
+            label.textAlignment = .center
+            label.backgroundColor = UIColor.lightGray
+            label.text = "Geofences"
+            label.textColor = .white
+            return label
         }
         return nil
     }
