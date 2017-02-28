@@ -99,6 +99,10 @@ class AQMainMapViewController: AQBaseViewController, AQFilterListDelegate, GMSMa
             }
         }
         self.mapsView.animate(with: GMSCameraUpdate.fit(bounds, withPadding: 50))
+        if mapsView.camera.zoom <= 4 {
+           self.mapsView.animate(toZoom: 10)
+        }
+        
     }
     
     func addMarkerToMap(device: AQDevice) {
