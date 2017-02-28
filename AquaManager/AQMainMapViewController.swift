@@ -85,16 +85,24 @@ class AQMainMapViewController: AQBaseViewController, AQFilterListDelegate {
     
     func setCameraProperly() {
         var bounds = GMSCoordinateBounds()
-        
+        var pointsCount = 0
+        var singleCoordinate: CLLocationCoordinate2D = CLLocationCoordinate2D()
         for marker in markersList {
             bounds = bounds.includingCoordinate(marker.position)
+            pointsCount += 1
+            singleCoordinate = marker.position
         }
         
         for geo in geofencesList {
             bounds = bounds.includingCoordinate(geo.getLocation())
         }
         
-        self.mapsView.animate(with: GMSCameraUpdate.fit(bounds, withPadding: 50))
+        if pointsCount > 1 {
+           self.mapsView.animate(with: GMSCameraUpdate.fit(bounds, withPadding: 50))
+        }
+        else {
+           self.mapsView.animate(with: GMSCameraUpdate.setTarget(singleCoordinate, zoom: 0))
+        }
     }
     
     func addMarkerToMap(device: AQDevice) {
