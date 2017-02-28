@@ -70,6 +70,33 @@ class AQDevice: NSManagedObject {
         return AQMarkerColors.greenColor
     }
     
+    func getPathColor() -> UIColor {
+        let markerColor = self.getColorName()
+        if markerColor == .blueColor {
+            return .blue
+        }
+        if markerColor == .greenColor {
+             return .green
+        }
+        if markerColor == .orangeColor {
+             return .orange
+        }
+        if markerColor == .violetColor {
+             return .purple
+        }
+        if markerColor == .roseColor {
+             return .red
+        }
+        if markerColor == .magentaColor {
+             return .magenta
+        }
+        if markerColor == .azureColor {
+             return .cyan
+        }
+
+        return .blue
+    }
+    
     func getImageMarker() -> UIImage {
         let markerColor = self.getColorName()
         var image = UIImage(named: "green_marker")!

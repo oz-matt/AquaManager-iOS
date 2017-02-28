@@ -46,6 +46,24 @@ class AQSensData: Mappable {
         return sensorsData?.pctBattery
     }
     
+    func getSnippet() -> String? {
+        if gpsMinimum != nil {
+           var snippet = ""
+           snippet = AQUtils.getTitleDate(date: self.getDate())
+            if gpsMinimum!.gspeed != nil {
+               snippet += "\nGoing \(gpsMinimum!.gspeed!)mph"
+            }
+            if gpsMinimum!.numsat != nil {
+                snippet += "\n\(gpsMinimum!.numsat!) satellites in view"
+            }
+            if getBatteryValue() != nil {
+                snippet += "\n\(getBatteryValue()!)% battery"
+            }
+            return snippet
+        }
+        return nil
+    }
+    
     func getLocation() -> CLLocationCoordinate2D? {
         let lat: Float? = gpsMinimum?.lat
         let lon: Float? = gpsMinimum?.lon

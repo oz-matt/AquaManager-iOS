@@ -16,6 +16,7 @@
 		522F09E81E4230C8005C2188 /* StringExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522F09E71E4230C8005C2188 /* StringExtention.swift */; };
 		522F09EB1E4233DD005C2188 /* AQUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522F09EA1E4233DD005C2188 /* AQUtils.swift */; };
 		522F09ED1E4233EC005C2188 /* AQConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522F09EC1E4233EC005C2188 /* AQConstants.swift */; };
+		527611981E65F34E00B799D5 /* GMSMarker+AQSens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527611971E65F34E00B799D5 /* GMSMarker+AQSens.swift */; };
 		5282B18C1E409512002F99D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5282B18B1E409512002F99D6 /* AppDelegate.swift */; };
 		5282B1911E409512002F99D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5282B18F1E409512002F99D6 /* Main.storyboard */; };
 		5282B1931E409512002F99D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5282B1921E409512002F99D6 /* Assets.xcassets */; };
@@ -79,6 +80,7 @@
 		522F09E71E4230C8005C2188 /* StringExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtention.swift; sourceTree = "<group>"; };
 		522F09EA1E4233DD005C2188 /* AQUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AQUtils.swift; sourceTree = "<group>"; };
 		522F09EC1E4233EC005C2188 /* AQConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AQConstants.swift; sourceTree = "<group>"; };
+		527611971E65F34E00B799D5 /* GMSMarker+AQSens.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GMSMarker+AQSens.swift"; sourceTree = "<group>"; };
 		5282B1881E409512002F99D6 /* AquaManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AquaManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5282B18B1E409512002F99D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5282B1901E409512002F99D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 				52F4F1F11E460468008E3EEC /* AQNotificationsName.swift */,
 				520F44511E5F7D24009FDC89 /* AQMapFormulas.swift */,
 				528729511E6466E7009E1125 /* UITextField+Placeholder.swift */,
+				527611971E65F34E00B799D5 /* GMSMarker+AQSens.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -535,6 +538,7 @@
 				522F09E81E4230C8005C2188 /* StringExtention.swift in Sources */,
 				52D015E71E44F62A001F4A75 /* AQAddDeviceViewController.swift in Sources */,
 				529324A31E54DB2D00036949 /* AQFillNotificationInfoController.swift in Sources */,
+				527611981E65F34E00B799D5 /* GMSMarker+AQSens.swift in Sources */,
 				52A91E3F1E4CFCA4001D7D9B /* AQGeofenceCreationViewController.swift in Sources */,
 				5282B1B11E4122A8002F99D6 /* AQRemoveNotifRequest.swift in Sources */,
 				528729521E6466E7009E1125 /* UITextField+Placeholder.swift in Sources */,

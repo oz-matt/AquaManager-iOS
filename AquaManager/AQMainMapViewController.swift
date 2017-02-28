@@ -9,7 +9,7 @@
 import Foundation
 import GoogleMaps
 
-class AQMainMapViewController: AQBaseViewController, AQFilterListDelegate {
+class AQMainMapViewController: AQBaseViewController, AQFilterListDelegate, GMSMapViewDelegate {
     @IBOutlet weak var mapsView: GMSMapView!
     
     var devicesList: [AQDevice] = [AQDevice]()
@@ -22,7 +22,7 @@ class AQMainMapViewController: AQBaseViewController, AQFilterListDelegate {
         self.title = "Map"
         mapsView.mapType = AQSettingsManager.manager.getGoogleMapType()
         let icon = AQUtils.resizeImage(image: UIImage(named:"add")!, targetSize: CGSize(width: 22, height: 22))
-        
+        self.mapsView.delegate = self
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: icon, style: .plain, target: self, action: #selector(AQMainMapViewController.showFilterScreen))
         self.updateMapMarkers()
     }
@@ -54,12 +54,7 @@ class AQMainMapViewController: AQBaseViewController, AQFilterListDelegate {
         DispatchQueue.main.async {
             var markerCount = 0
             for dev in self.devicesList {
-                if markerCount < AQSettingsManager.manager.getNumberOfMarkers() {
-                   self.addMarkerToMap(device: dev)
-                }
-                else {
-                    break
-                }
+                self.addMarkerToMap(device: dev)
                 markerCount += 1
             }
             for geo in self.geofencesList {
@@ -72,7 +67,7 @@ class AQMainMapViewController: AQBaseViewController, AQFilterListDelegate {
     func addGeofenceMarker(geofence: AQGeofence) {
         let marker = GMSMarker(position: geofence.getLocation())
         marker.icon = AQUtils.resizeImage(image: UIImage(named: "flagd")!, targetSize: CGSize(width: 90, height: 50))
-        marker.title = geofence.getName()
+        marker.title = "Geofence: \(geofence.getName())"
         marker.map = self.mapsView
         self.markersList.append(marker)
         if geofence.isCircle {
@@ -86,32 +81,67 @@ class AQMainMapViewController: AQBaseViewController, AQFilterListDelegate {
     func setCameraProperly() {
         var bounds = GMSCoordinateBounds()
         var pointsCount = 0
-        var singleCoordinate: CLLocationCoordinate2D = CLLocationCoordinate2D()
+
         for marker in markersList {
             bounds = bounds.includingCoordinate(marker.position)
             pointsCount += 1
-            singleCoordinate = marker.position
         }
         
         for geo in geofencesList {
-            bounds = bounds.includingCoordinate(geo.getLocation())
+            if geo.isCircle {
+                let circ = GMSCircle(position: geo.getLocation(), radius: Double(geo.radius * 1609.34))
+                bounds = bounds.includingBounds(circ.bounds())
+            }
+            else {
+                if let path = AQUtils.getPath(coordinates: geo.getCoordinates()) {
+                    bounds = bounds.includingPath(path)
+                }
+            }
         }
-        
-        if pointsCount > 1 {
-           self.mapsView.animate(with: GMSCameraUpdate.fit(bounds, withPadding: 50))
-        }
-        else {
-           self.mapsView.animate(with: GMSCameraUpdate.setTarget(singleCoordinate, zoom: 0))
-        }
+        self.mapsView.animate(with: GMSCameraUpdate.fit(bounds, withPadding: 50))
     }
     
     func addMarkerToMap(device: AQDevice) {
-        let position = device.getLocation(index: 0)
-        if position != nil {
-            let marker = GMSMarker(position: position!)
-            marker.icon = device.getImageMarker()
-            marker.map = self.mapsView
-            self.markersList.append(marker)
+        if device.aqsens != nil {
+            let count = device.aqsens!.count
+            if count > 0 {
+                //draw markers and path
+                let path = GMSMutablePath()
+                
+                var currentIndex = 0
+                let alphaDelta: Double = 1.0 / Double(count)
+                for sens in device.aqsens! {
+                    if currentIndex > AQSettingsManager.manager.getNumberOfMarkers() - 1 {
+                       break
+                    }
+                    if let loc = sens.getLocation() {
+                        path.add(loc)
+                        let marker = GMSMarker(position: loc)
+                        marker.updateWithSens(sens: sens, device: device, number: currentIndex + 1)
+                        marker.map = self.mapsView
+                        marker.zIndex = Int32(count - currentIndex)
+                        print("added marker \(currentIndex)")
+                        marker.iconView!.alpha = CGFloat(1.0 - Double(currentIndex) * alphaDelta)
+                        self.markersList.append(marker)
+                    }
+                    currentIndex += 1
+                }
+                
+                let line: GMSPolyline = GMSPolyline(path: path)
+                line.strokeWidth = 2
+                line.strokeColor = device.getPathColor()
+                line.map = self.mapsView
+            }
+        }
+    }
+    
+    func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
+        if marker.userData != nil {
+           let sens = marker.userData as! AQSensData
+            let vc = AQControllerFactory.factory.getTextViewController()
+            vc.textToShow = sens.toJSONString(prettyPrint: true)!
+            vc.title = AQUtils.getTitleDate(date: sens.getDate())
+            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
     

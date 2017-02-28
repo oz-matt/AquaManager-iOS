@@ -196,6 +196,7 @@ class AQUtils {
     
     static func drawCircle(position: CLLocationCoordinate2D, radius: Float, mapView: GMSMapView) {
         let circ = GMSCircle(position: position, radius: Double(radius * 1609.34))
+        
         circ.fillColor = AQColor.AREA_COLOR
         circ.strokeWidth = 4
         circ.strokeColor = AQColor.AREA_BORDER_COLOR
@@ -203,8 +204,18 @@ class AQUtils {
     }
     
     static func drawRect(coordinates: [Double], mapView: GMSMapView) {
+        if let path = AQUtils.getPath(coordinates: coordinates) {
+            let rect = GMSPolygon(path: path)
+            rect.fillColor = AQColor.AREA_COLOR
+            rect.strokeWidth = 5
+            rect.strokeColor = AQColor.AREA_BORDER_COLOR
+            rect.map = mapView
+        }
+    }
+    
+    static func getPath(coordinates: [Double]) -> GMSPath? {
         if coordinates.count != 16 {
-           return
+            return nil
         }
         let path = GMSMutablePath()
         path.add(CLLocationCoordinate2D(latitude: coordinates[0], longitude: coordinates[1]))
@@ -215,12 +226,7 @@ class AQUtils {
         path.add(CLLocationCoordinate2D(latitude: coordinates[10], longitude: coordinates[11]))
         path.add(CLLocationCoordinate2D(latitude: coordinates[12], longitude: coordinates[13]))
         path.add(CLLocationCoordinate2D(latitude: coordinates[14], longitude: coordinates[15]))
-
-        let rect = GMSPolygon(path: path)
-        rect.fillColor = AQColor.AREA_COLOR
-        rect.strokeWidth = 5
-        rect.strokeColor = AQColor.AREA_BORDER_COLOR
-        rect.map = mapView
+        return path
     }
     
     /*private static double[] getBoundingBox(final double pLatitude, final double pLongitude, final double pDistanceInMeters) {
