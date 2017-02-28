@@ -62,6 +62,7 @@ class AQSettingsViewController: AQBaseViewController, UITableViewDelegate, UITab
         self.tableView.dataSource = self
         self.tableView.reloadData()
         self.title = "Settings"
+
         //self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(AQSettingsViewController.handleSave))
     }
     
@@ -125,6 +126,7 @@ class AQSettingsViewController: AQBaseViewController, UITableViewDelegate, UITab
             cell.labelMain.text = "Max No. Markers Per Device"
             cell.textField.text = "\(markersCount)"
             cell.textField.delegate = self
+            cell.textField.returnKeyType = .done
             cell.selectionStyle = .none
             return cell
         }
@@ -169,6 +171,11 @@ class AQSettingsViewController: AQBaseViewController, UITableViewDelegate, UITab
             return true
         }
         return false
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
