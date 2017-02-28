@@ -62,7 +62,15 @@ class AQSettingsViewController: AQBaseViewController, UITableViewDelegate, UITab
         self.tableView.dataSource = self
         self.tableView.reloadData()
         self.title = "Settings"
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(AQSettingsViewController.handleSave))
+        //self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(AQSettingsViewController.handleSave))
+    }
+    
+    @IBAction func handleSaveButton(_ sender: UIButton) {
+        self.handleSave()
+    }
+    
+    @IBAction func handleCancelButton(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
     }
     
     func handleSave() {
