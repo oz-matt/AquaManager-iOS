@@ -57,11 +57,15 @@ class AQSensData: Mappable {
     
     func getDate() -> Date {
         let date = Date()
-        if datetime != nil {
+        var dateTime = datetime
+        if gpsMinimum != nil && gpsMinimum!.time != nil {
+            dateTime = gpsMinimum!.time
+        }
+        if dateTime != nil {
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
             dateFormatter.timeZone = TimeZone(abbreviation: "GMT")
-            let dateObj = dateFormatter.date(from: datetime!)
+            let dateObj = dateFormatter.date(from: dateTime!)
             
             return dateObj!
         }
