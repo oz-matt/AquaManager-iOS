@@ -110,6 +110,10 @@ class AQMainViewController: AQBaseViewController, UIPageViewControllerDelegate, 
     }
 
     @IBAction func handleRefreshButton(_ sender: UIButton) {
+        if !isInternetAvailable() {
+           return
+        }
+        
         self.showLoadingHUD()
         currentRefreshIndex = 0
         triggerNextRefresh()

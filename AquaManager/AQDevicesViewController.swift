@@ -49,6 +49,10 @@ class AQDevicesViewController: AQBaseViewController, UITableViewDelegate, UITabl
     }
     
     @IBAction func handleAddDeviceButton(_ sender: UIButton) {
+        if !isInternetAvailable() {
+            return
+        }
+        
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "AQAddDeviceViewController") as! AQAddDeviceViewController
         vc.modalPresentationStyle = .overCurrentContext

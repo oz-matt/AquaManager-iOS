@@ -59,6 +59,9 @@ class AQNotificationsViewController: AQBaseViewController, AQAddNotificationDele
     }
     
     @IBAction func handleAddButton(_ sender: UIButton) {
+        if !isInternetAvailable() {
+            return
+        }
         if AQDeviceManager.manager.devices.count > 0 {
             let vc = AQControllerFactory.factory.getAddNotificationViewController()
             vc.delegate = self

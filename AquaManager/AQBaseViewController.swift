@@ -103,18 +103,34 @@ class AQBaseViewController: UIViewController {
     }
     
     func showConnectionAlert() {
-        self.hideHUD()
+        DispatchQueue.main.async {
+            self.hideHUD()
+            
+            let hudInet = MBProgressHUD.showAdded(to: ((UIApplication.shared.delegate?.window)!)!, animated: true)
+            hudInet.mode = .customView
+            hudInet.removeFromSuperViewOnHide = true
+            
+            let image = AQUtils.resizeImage(image: UIImage.init(named: "connectionlost")!, targetSize: CGSize(width: 40, height: 40))
+            
+            let customView: UIImageView = UIImageView.init(image: image)
+            customView.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+            
+            hudInet.customView = customView
+            hudInet.labelText = "No Internet Connection"
+            hudInet.hide(true, afterDelay: 2)
+        }
         
-        let hudInet = MBProgressHUD.showAdded(to: ((UIApplication.shared.delegate?.window)!)!, animated: true)
-        hudInet.mode = .customView
-        hudInet.removeFromSuperViewOnHide = true
-        
-        let customView: UIImageView = UIImageView.init(image: UIImage.init(named: "redclose"))
-        customView.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
-        
-        hudInet.customView = customView
-        hudInet.labelText = NSLocalizedString("lbl_no_internet", comment: "")
-        hudInet.hide(true, afterDelay: 2)
+    }
+    
+    func isInternetAvailable() -> Bool {
+        let reachability = Reachability()!
+        if reachability.isReachable {
+           return true
+        }
+        else {
+            self.showConnectionAlert()
+            return false
+        }
     }
     
     func showAlertWithTitle(_ title: String, message: String) {
@@ -144,23 +160,6 @@ class AQBaseViewController: UIViewController {
         DispatchQueue.main.async {
             self.present(alertController, animated: true, completion: nil)
         }
-    }
-    
-    func isInternetAvailable() -> Bool {
-        var reachability: Reachability
-        
-        do {
-            reachability = Reachability()!
-            if !reachability.isReachable {
-                showConnectionAlert()
-                return false
-            }
-            return true
-        }
-        catch {
-            print(error)
-        }
-        return false
     }
     
     func reachabilityChanged(_ note: Foundation.Notification) {
