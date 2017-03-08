@@ -36,6 +36,7 @@ extension GMSMarker {
            view.frame = CGRect(x: 0, y: 30, width: 30, height: 51)
            biggerView.addSubview(view)
            self.iconView = biggerView
+            self.infoWindowAnchor = CGPoint(x: 0.5, y: 0.4)
         }
         else {
            self.iconView = view
