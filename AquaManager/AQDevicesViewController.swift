@@ -134,6 +134,7 @@ class AQDevicesViewController: AQBaseViewController, UITableViewDelegate, UITabl
         
         cell.lblBatt.text = device.getBatt()
         cell.selectionStyle = .none
+        cell.contentView.backgroundColor = self.defineColorOfCell(device: device)
         return cell
     }
     
@@ -174,5 +175,28 @@ class AQDevicesViewController: AQBaseViewController, UITableViewDelegate, UITabl
     func deviceAdded(device: AQDevice) {
         NotificationCenter.default.post(Notification(name: Notification.Name.showToastMessage, object: nil, userInfo: ["text": "Device added."]))
         updateDeviceList()
+    }
+    
+    func defineColorOfCell(device: AQDevice) -> UIColor {
+        if let aqsens = device.getActiveSens(index: 0) {
+           let time = aqsens.getDate()
+            if let rate = aqsens.sensorsData?.updateRate {
+               let orangeThreshold = rate * 60 * 1000 * 3
+               let redThrehold = rate * 60 * 1000 * 6
+                
+               let interval = -time.timeIntervalSinceNow
+               print("int \(interval)")
+               print("red \(redThrehold)")
+               print("orange \(orangeThreshold)")
+                
+                if interval > Double(redThrehold) {
+                    return UIColor.red
+                }
+                if interval > Double(orangeThreshold) {
+                    return UIColor.orange
+                }
+            }
+        }
+        return UIColor.green
     }
 }

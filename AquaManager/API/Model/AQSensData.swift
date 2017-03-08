@@ -125,6 +125,7 @@ class AQSensorsData: Mappable {
     var temperature: String?
     var humidity: Int?
     var pressure: Int?
+    var updateRate: Int?
     
     init() {
         
@@ -140,7 +141,7 @@ class AQSensorsData: Mappable {
         self.temperature <- map["temperature"]
         self.humidity <- map["humidity"]
         self.pressure <- map["pressure"]
- 
+        self.updateRate <- map["update_rate"]
     }
 }
 

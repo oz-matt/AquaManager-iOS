@@ -95,6 +95,7 @@ class AQAddDeviceViewController: AQBaseViewController, UITextFieldDelegate {
         else {
             if validateDeviceName() {
                 device!.name = aquaIdTextField.text!
+                device!.markerColor = AQDeviceManager.manager.getNewColorForDevice().rawValue
                 AQDevice.updateDevice(device: device!)
                 self.delegate.deviceAdded(device: self.device!)
                 self.dismiss(animated: true, completion: nil)

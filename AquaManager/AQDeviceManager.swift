@@ -63,4 +63,27 @@ class AQDeviceManager {
             completion()
         }
     }
+    
+    func getNewColorForDevice() -> AQMarkerColors {
+        let count = devices.count + 1
+        if count % 7 == 0 {
+            return AQMarkerColors.azureColor
+        }
+        if count % 6 == 0 {
+            return AQMarkerColors.magentaColor
+        }
+        if count % 5 == 0 {
+            return AQMarkerColors.roseColor
+        }
+        if count % 4 == 0 {
+            return AQMarkerColors.violetColor
+        }
+        if count % 3 == 0 {
+            return AQMarkerColors.orangeColor
+        }
+        if count % 2 == 0 {
+            return AQMarkerColors.greenColor
+        }
+        return AQMarkerColors.blueColor
+    }
 }
