@@ -181,8 +181,8 @@ class AQDevicesViewController: AQBaseViewController, UITableViewDelegate, UITabl
         if let aqsens = device.getActiveSens(index: 0) {
            let time = aqsens.getDate()
             if let rate = aqsens.sensorsData?.updateRate {
-               let orangeThreshold = rate * 60 * 1000 * 3
-               let redThrehold = rate * 60 * 1000 * 6
+               let orangeThreshold = rate * 60 * 3
+               let redThrehold = rate * 60 * 6
                 
                let interval = -time.timeIntervalSinceNow
                print("int \(interval)")
