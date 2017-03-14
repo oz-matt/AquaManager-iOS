@@ -195,8 +195,9 @@ class AQDevicesViewController: AQBaseViewController, UITableViewDelegate, UITabl
                 if interval > Double(orangeThreshold) {
                     return AQColor.DEVICE_ROW_COLOR_ORANGE
                 }
+                return AQColor.DEVICE_ROW_COLOR_GREEN
             }
         }
-        return AQColor.DEVICE_ROW_COLOR_GREEN
+        return UIColor.lightGray
     }
 }
