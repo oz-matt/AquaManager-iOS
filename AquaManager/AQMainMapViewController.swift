@@ -99,11 +99,9 @@ class AQMainMapViewController: AQBaseViewController, AQFilterListDelegate, GMSMa
             }
         }
         self.mapsView.animate(with: GMSCameraUpdate.fit(bounds, withPadding: 50))
-        print(mapsView.camera.zoom)
-        //if mapsView.camera.zoom <= 4 {
-          // self.mapsView.animate(toZoom: 10)
-        //}
-        
+        if bounds.northEast.latitude == bounds.southWest.latitude && bounds.northEast.longitude == bounds.southWest.longitude {
+           self.mapsView.animate(toZoom: 10)
+        }
     }
     
     func addMarkerToMap(device: AQDevice) {
