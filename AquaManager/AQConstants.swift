@@ -15,6 +15,10 @@ enum AQColor {
     
     static let AREA_BORDER_COLOR = UIColor(red: 102 / 255.0, green: 204.0 / 255.0, blue: 255.0 / 255.0, alpha: 1.0)
     static let AREA_COLOR = UIColor(red: 0 / 255.0, green: 49.0 / 255.0, blue: 60.0 / 255.0, alpha: 0.5)
+    
+    static let DEVICE_ROW_COLOR_RED = UIColor(red: 242.0 / 255.0, green: 64.0 / 255.0, blue: 64.0 / 255.0, alpha: 0.5)
+    static let DEVICE_ROW_COLOR_ORANGE = UIColor(red: 253.0 / 255.0, green: 166.0 / 255.0, blue: 35.0 / 255.0, alpha: 0.5)
+    static let DEVICE_ROW_COLOR_GREEN = UIColor(red: 53.0 / 255.0, green: 168.0 / 255.0, blue: 30.0 / 255.0, alpha: 0.5)
 }
 
 enum AQConstants {

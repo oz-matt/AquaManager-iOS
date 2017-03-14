@@ -190,13 +190,13 @@ class AQDevicesViewController: AQBaseViewController, UITableViewDelegate, UITabl
                print("orange \(orangeThreshold)")
                 
                 if interval > Double(redThrehold) {
-                    return UIColor.red
+                    return AQColor.DEVICE_ROW_COLOR_RED
                 }
                 if interval > Double(orangeThreshold) {
-                    return UIColor.orange
+                    return AQColor.DEVICE_ROW_COLOR_ORANGE
                 }
             }
         }
-        return UIColor.green
+        return AQColor.DEVICE_ROW_COLOR_GREEN
     }
 }
