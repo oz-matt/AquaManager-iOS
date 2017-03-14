@@ -114,7 +114,7 @@ class AQMainMapViewController: AQBaseViewController, AQFilterListDelegate, GMSMa
                 let path = GMSMutablePath()
                 
                 var currentIndex = 0
-                let alphaDelta: Double = 1.0 / Double(count)
+                let alphaDelta: Double = 0.8 / Double(count)
                 for sens in device.aqsens! {
                     if currentIndex > AQSettingsManager.manager.getNumberOfMarkers() - 1 {
                        break
@@ -126,7 +126,7 @@ class AQMainMapViewController: AQBaseViewController, AQFilterListDelegate, GMSMa
                         marker.map = self.mapsView
                         marker.zIndex = Int32(count - currentIndex)
                         print("added marker \(currentIndex)")
-                        marker.iconView!.alpha = CGFloat(1.0 - Double(currentIndex) * alphaDelta)
+                        marker.iconView!.alpha = CGFloat(1 - Double(currentIndex) * alphaDelta)
                         self.markersList.append(marker)
                     }
                     currentIndex += 1

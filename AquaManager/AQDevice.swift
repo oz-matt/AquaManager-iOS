@@ -197,7 +197,7 @@ class AQDevice: NSManagedObject {
     }
     
     func getAquaKey() -> String? {
-        return self.aquaId
+        return self.aquaKey
     }
     
     func getPhoneNumber() -> String? {
