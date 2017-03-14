@@ -30,6 +30,9 @@ class AQMainViewController: AQBaseViewController, UIPageViewControllerDelegate, 
         self.setupBottonTab()
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         NotificationCenter.default.addObserver(self, selector: #selector(AQMainViewController.showMainToastMessage(not:)), name: Notification.Name.showToastMessage, object: nil)
+        
+        AQDeviceManager.manager.reloadDevices()
+        refreshDevicesFromServer()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -110,8 +113,12 @@ class AQMainViewController: AQBaseViewController, UIPageViewControllerDelegate, 
     }
 
     @IBAction func handleRefreshButton(_ sender: UIButton) {
+        refreshDevicesFromServer()
+    }
+    
+    func refreshDevicesFromServer() {
         if !isInternetAvailable() {
-           return
+            return
         }
         
         self.showLoadingHUD()
