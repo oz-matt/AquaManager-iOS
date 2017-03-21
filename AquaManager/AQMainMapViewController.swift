@@ -21,7 +21,7 @@ class AQMainMapViewController: AQBaseViewController, AQFilterListDelegate, GMSMa
         self.navigationController?.navigationBar.isHidden = false
         self.title = "Map"
         mapsView.mapType = AQSettingsManager.manager.getGoogleMapType()
-        let icon = AQUtils.resizeImage(image: UIImage(named:"add")!, targetSize: CGSize(width: 22, height: 22))
+        let icon = AQUtils.resizeImage(image: UIImage(named:"add")!, targetSize: CGSize(width: 35, height: 35))
         self.mapsView.delegate = self
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: icon, style: .plain, target: self, action: #selector(AQMainMapViewController.showFilterScreen))
         self.updateMapMarkers()

@@ -14,7 +14,7 @@ import ReachabilitySwift
 class AQBaseViewController: UIViewController {
     
     var tap: UITapGestureRecognizer?
-    var toastYOffset : Float = 150.0;
+    var toastYOffset : Float = 250.0;
     var progressHUD = MBProgressHUD()
     
     override func viewDidLoad() {
@@ -68,7 +68,7 @@ class AQBaseViewController: UIViewController {
         // Configure for text only and offset down
         toast.mode = MBProgressHUDMode.text;
         toast.labelText = text
-        toast.labelFont = UIFont(name: AQFonts.FONT_REGULAR, size: 12)!
+        toast.labelFont = UIFont(name: AQFonts.FONT_REGULAR, size: 18)!
         toast.margin = 10
         toast.yOffset = CGFloat(self.toastYOffset)
         toast.removeFromSuperViewOnHide = true
