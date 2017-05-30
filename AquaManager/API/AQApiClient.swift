@@ -11,7 +11,7 @@ import Alamofire
 
 class AQApiClient {
     
-    let API_URL = "http://198.61.169.55:8081"
+    let API_URL = "https://data.aquaiot.com"
     
     static let RESPONSE_CODE_SUCCESS = 200
     static let RESPONSE_CODE_SUCCESS_CREATED = 201
